@@ -1,6 +1,16 @@
 .banner-section {
   height: 80vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff; // 深色字在白遮罩上才清楚
+}
+@media (max-width: 768px) {
+  .banner-section {
+    height: 50vh; // 行動裝置版你想要的高度，這裡可自行調整
+  }
 }
 
 .banner-bg {
@@ -11,6 +21,34 @@
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
+
+  // 加遮罩
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color:rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+}
+.banner-text {
+  position: relative;
+  top: -40px; // 你可以調整這個數值往上移更多
+  text-align: center;
+
+  img {
+    width: 80px; // 控制 logo 大小（你也可用 max-width）
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1rem;
+  }
 }
 
 .parallax-img {
@@ -19,9 +57,57 @@
   z-index: 2;
 }
 
-.img1 { top: 30%; left: 10%; }
+.img1 { top: 20%; left: 10%; }
 .img2 { top: 35%; left: 40%; }
-.img3 { top: 25%; right: 10%; }
+.img3 { top: 45%; left: 15%; }
+.img4 { top: 15%; right: 10%; }
+
+.about-section {
+  position: relative;
+  height: 100vh;
+  background-image: url(../pic/hand.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); // 黑色透明
+  z-index: 1;
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    background-attachment: scroll; // ✅ 解決 fixed 問題
+    background-size: cover; // 或改為 cover，根據你想呈現的感覺
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: auto; // ✅ 不限制高度
+    padding: 100px 20px;
+  }
+
+  .about-section .about-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+  }
+
+  .about-section .about-img {
+    display: none;
+  }
+}
+
 
 
 .carousel-inner img {

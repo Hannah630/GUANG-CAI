@@ -1,8 +1,18 @@
 .banner-section {
   height: 80vh;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 
+@media (max-width: 768px) {
+  .banner-section {
+    height: 50vh;
+  }
+}
 .banner-bg {
   background-image: url("../pic/banner.jpg");
   background-size: cover;
@@ -15,6 +25,33 @@
   bottom: 0;
   z-index: 0;
 }
+.banner-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.banner-text {
+  position: relative;
+  top: -40px;
+  text-align: center;
+}
+.banner-text img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+.banner-text h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.banner-text p {
+  font-size: 1rem;
+}
 
 .parallax-img {
   position: absolute;
@@ -23,7 +60,7 @@
 }
 
 .img1 {
-  top: 30%;
+  top: 20%;
   left: 10%;
 }
 
@@ -33,10 +70,61 @@
 }
 
 .img3 {
-  top: 25%;
+  top: 45%;
+  left: 15%;
+}
+
+.img4 {
+  top: 15%;
   right: 10%;
 }
 
+.about-section {
+  position: relative;
+  height: 100vh;
+  background-image: url(../pic/hand.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: auto;
+    padding: 100px 20px;
+  }
+  .about-section .about-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+  }
+  .about-section .about-img {
+    display: none;
+  }
+}
 .carousel-inner img {
   height: 300px;
   -o-object-fit: cover;
