@@ -17,7 +17,7 @@
   background-image: url("../pic/banner.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
@@ -50,6 +50,34 @@
     font-size: 1rem;
   }
 }
+@media (max-width: 768px) {
+  .banner-bg {
+    background-attachment: scroll; // ✅ 手機版不建議用 fixed
+    background-position: center top;
+    background-size: cover;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+  }
+
+  .banner-text {
+    top: 0; // ✅ 手機板不要往上偏移，避免出界
+    padding-top: 80px;
+    padding-bottom: 40px;
+
+    img {
+      width: 60px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
 
 .parallax-img {
   position: absolute;
