@@ -1,26 +1,42 @@
-@charset "UTF-8";
-.header-banner {
-  background-image: url("../pic/banner.jpg");
-  background-size: cover;
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* ✅ 開啟視差效果 */
+.banner-section {
   height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 48px 16px;
+  position: relative;
 }
 
-@media (max-width: 768px) {
-  .header-banner {
-    background-image: url("../pic/banner.jpg");
-    height: 30vh;
-    background-position: 50% 50%;
-    background-attachment: scroll;
-  }
+.banner-bg {
+  background-image: url("../pic/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
+
+.parallax-img {
+  position: absolute;
+  width: 250px;
+  z-index: 2;
+}
+
+.img1 {
+  top: 30%;
+  left: 10%;
+}
+
+.img2 {
+  top: 35%;
+  left: 40%;
+}
+
+.img3 {
+  top: 25%;
+  right: 10%;
+}
+
 .carousel-inner img {
   height: 300px;
   -o-object-fit: cover;

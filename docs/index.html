@@ -40,7 +40,16 @@
         </div>
     </nav>
 
-    <div class="header-banner justify-content-center position-relative "></div>
+    <section class="banner-section position-relative overflow-hidden">
+      <!-- 背景圖 -->
+      <div class="banner-bg"></div>
+    
+      <!-- 去背人物圖層 -->
+      <img src="pic/person1.png" class="parallax-img img1" data-aos="fade-up" data-aos-delay="100">
+      <img src="pic/person2.png" class="parallax-img img2" data-aos="fade-up" data-aos-delay="300">
+      <img src="pic/person3.png" class="parallax-img img3" data-aos="fade-up" data-aos-delay="500">
+    </section>
+    
     
     <div class="container my-3">
       <div class="row align-items-center justify-content-center ">
@@ -365,6 +374,10 @@
       </div>
     </footer>
     
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
       
       
