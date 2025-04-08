@@ -81,7 +81,7 @@ html, body {
 
 @media (max-width: 768px) {
   .banner {
-    height: 60vh;
+    height: 75vh;
     background-attachment: scroll;
   }
   .banner::before {
@@ -183,4 +183,40 @@ html, body {
   background-color: white;
   padding: 0.75rem 1rem;
   text-align: center;
+}
+
+.timeline-section {
+  background: #f8f9fa;
+}
+
+.timeline {
+  border-left: 3px solid #0B1013;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #0B1013;
+  border-radius: 50%;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #0B1013;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-content {
+  color: #555;
 }
