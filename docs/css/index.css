@@ -81,7 +81,7 @@ html, body {
 
 @media (max-width: 768px) {
   .banner {
-    height: 90vh;
+    height: 60vh;
     background-attachment: scroll;
   }
   .banner::before {
@@ -137,7 +137,7 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    height: 75vh;
+    height: 82vh;
     padding: 100px 20px;
   }
   .about-section .about-text {

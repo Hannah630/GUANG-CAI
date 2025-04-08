@@ -78,7 +78,7 @@ html, body {
 
 @media (max-width: 768px) {
   .banner{
-    height: 90vh;
+    height: 60vh;
     background-attachment: scroll;
   }
   .banner::before {
@@ -135,7 +135,7 @@ html, body {
     background-size: cover; // 或改為 cover，根據你想呈現的感覺
     background-repeat: no-repeat;
     background-position: center top;
-    height: 75vh; // ✅ 不限制高度
+    height: 82vh; // ✅ 不限制高度
     padding: 100px 20px;
   }
 
