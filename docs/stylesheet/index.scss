@@ -1,95 +1,108 @@
-.banner-section {
-  height: 80vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff; // 深色字在白遮罩上才清楚
+/* 全站使用 Cactus Classical Serif 為主，中英文 fallback 配好 */
+body {
+  font-family: 'Cactus Classical Serif', 'Noto Sans TC', 'Microsoft JhengHei', serif;
 }
-@media (max-width: 768px) {
-  .banner-section {
-    height: 50vh; // 行動裝置版你想要的高度，這裡可自行調整
-  }
+h1, h2, h3, h4, p, li, span  .banner-text h1 {
+  font-family: 'Cactus Classical Serif', serif;
+  letter-spacing: 1px;
 }
 
-.banner-bg {
-  background-image: url("../pic/banner.jpg");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Cactus Classical Serif', serif;
+}
+
+.banner {
+  position: relative;
+  height: 80vh;
+  background-image: url('../pic/banner.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 0;
-
-  // 加遮罩
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(255, 255, 255, 0.2);
-    z-index: 1;
-  }
+  overflow: hidden;
 }
-.banner-text {
+
+/* 左側遮罩 */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%; height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* 半透明白色 */
+  z-index: 1;
+}
+
+.banner-content {
   position: relative;
-  top: -40px; // 你可以調整這個數值往上移更多
-  text-align: center;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* 靠左 */
+  padding-left: 8%;
+  text-align: left;
+  color: #333; /* ✅ 深色文字比較清楚 */
+}
+.content-wrap {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
 
-  img {
-    width: 80px; // 控制 logo 大小（你也可用 max-width）
-    margin-bottom: 10px;
+.logo {
+  width: 60px;
+  margin-bottom: 0px;
+  width: 80px;
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.85); /* ✅ 白色圓底 */
+  border-radius: 50%; /* ✅ 圓形 */
+  display: inline-block;
+}
+
+
+.banner-content h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .banner{
+    height: 50vh;
+    background-attachment: scroll;
+  }
+  .banner::before {
+    width: 100%;
   }
 
-  h1 {
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .banner-content h1 {
     font-size: 2rem;
-    font-weight: bold;
   }
 
-  p {
+  .banner-content img {
+    width: 60px;
+  }
+
+  .banner-content p {
     font-size: 1rem;
   }
 }
-@media (max-width: 768px) {
-  .banner-bg {
-    background-attachment: scroll; // ✅ 手機版不建議用 fixed
-    background-position: center top;
-    background-size: cover;
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-  }
-
-  .banner-text {
-    top: 0; // ✅ 手機板不要往上偏移，避免出界
-    padding-top: 80px;
-    padding-bottom: 40px;
-
-    img {
-      width: 60px;
-    }
-
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    p {
-      font-size: 0.9rem;
-    }
-  }
-}
-
-
-.parallax-img {
-  position: absolute;
-  width: 250px;
-  z-index: 2;
-}
-
-.img1 { top: 20%; left: 10%; }
-.img2 { top: 35%; left: 40%; }
-.img3 { top: 45%; left: 15%; }
-.img4 { top: 15%; right: 10%; }
-
 .about-section {
   position: relative;
   height: 100vh;
@@ -122,7 +135,7 @@
     background-size: cover; // 或改為 cover，根據你想呈現的感覺
     background-repeat: no-repeat;
     background-position: center top;
-    height: auto; // ✅ 不限制高度
+    height: 75vh; // ✅ 不限制高度
     padding: 100px 20px;
   }
 
