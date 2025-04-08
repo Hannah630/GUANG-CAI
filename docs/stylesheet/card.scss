@@ -1,0 +1,98 @@
+
+
+  .timeline-section {
+    background: #f8f9fa;
+  }
+  .timeline {
+    border-left: 3px solid #0B1013;
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -1.1rem;
+    top: 0.2rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #0B1013;
+    border-radius: 50%;
+  }
+  .timeline-date {
+    font-weight: bold;
+    color: #0B1013;
+    margin-bottom: 0.2rem;
+  }
+  .timeline-content {
+    color: #555;
+  }
+  
+  
+  /* 桌面版卡片維持自動高度 */
+  .card-pic{
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* 卡片內圖片限制最大高度 */
+  .card-pic img {
+    max-height: 260px;
+    object-fit: cover;
+  }
+  .card-pic-body {
+    padding: 0.25rem 0.25rem; /* 減少上下內間距 */
+  }
+  
+  .card-pic-title {
+    font-size: 1rem;
+    margin-bottom: 0.25rem; /* 原本可能是 mb-3 改小 */
+    line-height: 0;
+    align-items: center;
+  }
+  
+  
+  /* 手機版限制整張卡片高度 */
+  @media (max-width: 768px) {
+    .card-pic {
+      height: 320px; /* 可依需要調整高 */
+    }
+  
+    .card-pic img {
+      max-height: 180px; /* 手機圖片不要太高 */
+    }
+  
+    .card-pic-title {
+      font-size: 0.8rem;
+      margin-bottom: 0;
+    }
+  
+    .card-pic-body {
+      padding: 0.25rem 0.25rem;
+    }
+  }
+  
+  .main-banner {
+    height: 80vh;
+    background-image: url("../pic/cd.bn.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #333;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .main-banner {
+      background-size: contain;       /* ✅ 不要裁圖 */
+      background-position: top center;
+      height: auto;                   /* ✅ 高度讓內容自動決定 */
+      padding-top: 50vw;              /* ✅ 保留空間給圖片 */
+      
+    }
+  }
+  
