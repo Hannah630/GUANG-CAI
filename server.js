@@ -7,15 +7,30 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// 中介軟體設定
+// 🔧 中介軟體設定
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('embroidery')); // 靜態網頁來源是 embroidery/
+app.use(bodyParser.json());
 
-// 資料庫連線設定
+// ✅ 留言查詢 API（放在 static 前面，避免被攔截）
+app.get('/messages', (req, res) => {
+  const sql = 'SELECT * FROM contact_messages ORDER BY created_at DESC';
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('❌ 查詢留言失敗:', err);
+      return res.status(500).json({ error: '伺服器錯誤' });
+    }
+    res.json(results);
+  });
+});
+
+// ✅ 靜態網站來源（public html, css, js...）
+app.use(express.static('docs'));
+
+// 📦 資料庫連線設定
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '', // 如果有設定密碼請輸入
+  password: '', // 這裡要輸入密碼，如果有的話
   database: 'member_db'
 });
 
@@ -27,7 +42,26 @@ db.connect(err => {
   console.log('✅ 成功連接到資料庫');
 });
 
-// 📩 註冊處理
+// 📝 留言表單處理
+app.post('/contact', (req, res) => {
+  const { name, phone, email, god, source, message } = req.body;
+
+  const sql = `
+    INSERT INTO contact_messages (name, phone, email, god, source, message)
+    VALUES (?, ?, ?, ?, ?, ?)
+  `;
+
+  db.execute(sql, [name, phone, email, god, source, message], (err, result) => {
+    if (err) {
+      console.error('❌ 留言儲存失敗:', err);
+      return res.status(500).send('❌ 留言失敗，請稍後再試');
+    }
+
+    res.send('✅ 已成功送出留言，感謝您的回覆！');
+  });
+});
+
+// 🧾 註冊處理
 app.post('/register', async (req, res) => {
   const { name, address, phone, god, temple, email, password } = req.body;
 
@@ -74,7 +108,7 @@ app.post('/login', (req, res) => {
       return res.send('❌ 密碼錯誤');
     }
 
-    // 登入成功：導入商品頁 or 會員頁
+    // 登入成功導向會員頁
     res.redirect('/pages/member.html');
   });
 });
