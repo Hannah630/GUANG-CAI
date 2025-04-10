@@ -1,0 +1,9 @@
+.staff-photo {
+  max-width: 100%;
+  height: auto;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #333;
+}
