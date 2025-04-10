@@ -19,6 +19,80 @@ html, body {
   font-family: 'Cactus Classical Serif', serif;
 }
 
+.custom-navbar {
+  font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+  color: #fff !important;
+  min-height: 50px;
+  height: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.custom-navbar .navbar-brand {
+  font-family: 'Cactus Classical Serif', 'Noto Sans TC', serif;
+  letter-spacing: 0.5px;
+  color: #fff !important;
+}
+
+.custom-navbar .nav-link {
+  color: #fff !important;
+  font-family: 'Cactus Classical Serif', 'Noto Sans TC', serif;
+
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* logo 與文字間距 */
+  height: 56px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.logo-circle {
+  background-color:#fff;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle img {
+  height: 28px;
+  width: auto;
+}
+@media (max-width: 768px) {
+  .custom-navbar {
+    min-height: auto;
+    height: auto;
+    padding: 8px 16px; /* 上下8px，左右16px */
+  }
+
+  .logo-circle {
+    height: 40px;
+    width: 40px;
+  }
+
+  .logo-circle img {
+    height: 24px;
+  }
+
+  .navbar-brand-name {
+    font-size: 0.95rem;
+  }
+
+  .navbar-toggler {
+    padding: 4px 6px;
+  }
+}
+
+
+.navbar-brand-name {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 .banner {
   position: relative;
   height: 80vh;
