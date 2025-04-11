@@ -43,7 +43,7 @@ html, body {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 12px; /* logo 與文字間距 */
+  gap: 3px; /* logo 與文字間距 */
   height: 56px;
   white-space: nowrap;
   overflow: hidden;
