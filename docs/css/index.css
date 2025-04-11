@@ -43,7 +43,7 @@ html, body {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 3px; /* logo 與文字間距 */
+  gap: 10px; /* logo 與文字間距 */
   height: 56px;
   white-space: nowrap;
   overflow: hidden;
@@ -82,6 +82,9 @@ html, body {
   }
   .navbar-toggler {
     padding: 4px 6px;
+  }
+  .navbar-brand {
+    gap: 3px;
   }
 }
 .navbar-brand-name {

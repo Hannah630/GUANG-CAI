@@ -43,7 +43,7 @@ html, body {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 3px; /* logo 與文字間距 */
+  gap: 10px; /* logo 與文字間距 */
   height: 56px;
   white-space: nowrap;
   overflow: hidden;
@@ -82,6 +82,9 @@ html, body {
   }
   .navbar-toggler {
     padding: 4px 6px;
+  }
+  .navbar-brand {
+    gap: 3px;
   }
 }
 .navbar-brand-name {
@@ -288,42 +291,6 @@ html, body {
     background-attachment: scroll;
   }
 }
-.timeline-section {
-  background: #f8f9fa;
-}
-
-.timeline {
-  border-left: 3px solid #0B1013;
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline-item {
-  margin-bottom: 2rem;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -1.1rem;
-  top: 0.2rem;
-  width: 1rem;
-  height: 1rem;
-  background-color: #0B1013;
-  border-radius: 50%;
-}
-
-.timeline-date {
-  font-weight: bold;
-  color: #0B1013;
-  margin-bottom: 0.2rem;
-}
-
-.timeline-content {
-  color: #555;
-}
-
 .card-pic {
   position: relative;
   overflow: hidden;
@@ -407,4 +374,52 @@ html, body {
 .card p {
   font-size: 0.9rem;
   color: #333;
+}
+
+.parallax-wrapper-about {
+  background-image: url("../pic/parallax-wrapper-about.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .parallax-wrapper-about {
+    background-attachment: scroll;
+  }
+}
+.timeline {
+  position: relative;
+  border-left: 3px solid #0B1013;
+  padding-left: 1.5rem; /* 讓線往右一點 */
+  margin-left: 0.5rem; /* 稍微拉近左邊 */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1rem; /* 留給文字的空間，不要太多 */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0.45em; /* ✅ 比 px 更穩定對齊文字中線 */
+  left: -1.9rem;
+  width: 12px;
+  height: 12px;
+  background-color: #0B1013;
+  border-radius: 50%;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #0B1013;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-content {
+  color: #555;
 }
