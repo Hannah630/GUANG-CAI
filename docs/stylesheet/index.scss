@@ -247,3 +247,42 @@ html, body {
   padding: 0.75rem 1rem;
   text-align: center;
 }
+.parallax-wrapper {
+  background-image: url('../pic/parallax-section2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  color:#fff;
+}
+.parallax-section-combined {
+  position: relative;
+  background-image: url('../pic/parallax-section3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  z-index: 0;
+}
+
+.parallax-section-combined .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* ✅ 黑色透明遮罩 */
+  z-index: -1; /* 讓它蓋在背景圖上，但不影響內容 */
+}
+
+ @media (max-width: 768px) {
+    .move-up-mobile {
+      margin-top: -180px ;
+    }
+  }
+ 
+
