@@ -1,0 +1,43 @@
+.sellsproduct-card img {
+    width: 100%;
+    height: 200px; /* 或 220px、180px 可調整 */
+    object-fit: cover;
+  }
+@media (max-width: 575.98px) {
+    .sellproducts-card {
+      max-width: 90%;
+      margin: auto;
+    }
+    .sellproduct-card img {
+        width: 100%;
+        height: 200px; /* ✅ 可依你需求調整為統一高度 */
+        object-fit: cover; /* ✅ 確保圖片不變形、會裁切填滿 */
+        display: block;
+      }
+  }
+  .pagination .page-link {
+    color: #562E37; /* 主色調 */
+    border: 1px solid #ddd;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    background-color: white;
+  }
+  
+  .pagination .page-link:hover {
+    background-color: #562E37;
+    color: white;
+    border-color: #562E37;
+  }
+  
+  .pagination .page-link.active,
+  .pagination .page-link.active:hover {
+    background-color: #562E37;
+    color: white;
+    border-color: #562E37;
+  }
+  .card-img-top {
+    cursor: zoom-in;
+  }

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品頁</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar"style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+        <div class="container-fluid">
+          
+          <!-- 左：LOGO（桌面顯示） -->
+          <a class="navbar-brand d-none d-lg-flex align-items-center" href="../index.html">
+            <div class="logo-circle">
+              <img src="../pic/logo.svg" alt="光彩繡莊 Logo">
+            </div>
+            <div class="navbar-brand-name">府城光彩繡莊 GUANG CAI</div>
+          </a>
+        
+            <!-- 左：LOGO（手機顯示） -->
+            <a class="navbar-brand d-lg-none" href="../index.html"><img src="../pic/logo.svg" alt="" style="height: 40px; vertical-align: middle; margin-right: 8px;">府城光彩繡莊</a>
+        
+            <!-- 手機版的漢堡按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!-- 導覽列 -->
+            <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
+              <div class="navbar-nav nav-center">
+                <a class="nav-link" href="../login.html" id="loginLink">會員登入</a>
+                <a href="#" id="memberWelcome" class="nav-link text-white d-none" style="pointer-events: none;"></a>
+                <a href="#" class="nav-link d-none" id="logoutLink" onclick="logout()">登出</a>
+                <a class="nav-link" href="about.html">關於我們</a>
+                <a class="nav-link" href="card.html">繡莊產品</a>
+                <a class="nav-link" href="sellproduct.html">典藏精品</a>
+                <a class="nav-link d-inline-flex align-items-center" href="cart.html">
+                  購物車
+                  <span id="cart-count" class="badge rounded-pill bg-danger ms-2">
+                    0
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+      </nav>
+      <div class="parallax-wrapper-about"> 
+        <div class="product-title h3 text-center mb-3" style="font-family: 'Cactus Classical Serif'; margin-top: -60px;">
+          典藏精品
+        </div>
+      <div class="container my-5">
+        <div class="row row-cols-2  row-cols-md-3 row-cols-lg-4 g-4">
+          <!-- 🧊 商品卡片 -->
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/001.jpg" class="card-img-top img-fluid" alt="商品圖片" >
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC001</p>
+                <p class="price h5">NT$ $$$ </p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC001', 10200, '../pic/001.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/002.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC002</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC002', 10200, '../pic/002.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/003.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC003</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC003', 10200, '../pic/003.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/004.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC004</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC004', 10200, '../pic/004.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/005.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC005</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC005', 10200, '../pic/005.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/006.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC006</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC006', 10200, '../pic/006.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/007.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC007</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC007', 10200, '../pic/007.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/008.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC008</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC008', 10200, '../pic/008.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/009.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC009</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC009', 10200, '../pic/010.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/010.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC010</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC010', 10200, '../pic/010.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/011.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC011</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC011', 10200, '../pic/011.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/012.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC012</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC012', 10200, '../pic/012.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/013.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC013</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC013', 10200, '../pic/013.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/014.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC014</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC014', 10200, '../pic/014.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/015.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC015</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC015', 10200, '../pic/015.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/016.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC016</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC016', 10200, '../pic/016.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/017.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC017</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC017', 10200, '../pic/017.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/018.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC018</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC018', 10200, '../pic/018.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/019.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC019</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC019', 10200, '../pic/019.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/020.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC020</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC020', 10200, '../pic/020.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/021.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC021</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC021', 10200, '../pic/021.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/022.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC022</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC022', 10200, '../pic/022.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/023.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC023</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC023', 10200, '../pic/023.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/024.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">龍鳳吉祥</h5>
+                <p class="text-muted">產品編號：GC024</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('龍鳳吉祥 GC024', 10200, '../pic/024.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col products-card">
+            <div class="card sellsproduct-card text-center p-3 h-100">
+              <img src="../pic/025.jpg" class="card-img-top img-fluid" alt="商品圖片">
+              <div class="card-body">
+                <h5 class="fw-bold">吉星高照</h5>
+                <p class="text-muted">產品編號：GC025</p>
+                <p class="price h5">NT$ $$$</p>
+                <p class="text-muted small mb-3">尺寸：約寬 30cm × 高 45cm（含框）</p>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-dark" onclick="addToCart('吉星高照 GC025', 10200, '../pic/023.jpg')">加入購物車</button>
+                  <a href="sms:0900000000" class="btn btn-outline-dark">聊聊詢問</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center mt-5">
+        <nav>
+          <ul class="pagination" id="pagination"></ul>
+        </nav>
+    </div>
+  </div>
+   
+
+    <footer class="text-white pt-5 pb-3 " style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+        <div class="container">
+          <div class="row">
+            
+            <!-- 公司資訊 -->
+            <div class="col-md-6 mb-4">
+              <h5 class="h6 fw-bold">府城光彩繡莊</h5>
+              <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>地址：700台南市中西區永福路二段186-3號</p>
+              <p class="mb-1"><i class="bi bi-person-fill me-2"></i>CEO：林婕瑀</p>
+              <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>電話：0911781115</p>
+              <p class="mb-1"><i class="bi bi-phone-fill me-2"></i>LINE ID：@erica5617</p>
+            </div>
+      
+            <!-- 社群連結 -->
+            <div class="col-md-6 mb-4">
+              <h5 class="h6 fw-bold">聯絡我們</h5>
+              <p>歡迎透過以下平台與我們聯繫：</p>
+              <a href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" class=" text-white me-3 text-decoration-none ">
+                <i class="bi bi-facebook fs-5"></i>
+                <span>府城光彩繡莊</span>
+                
+              </a>
+              <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" class="text-white me-3 text-decoration-none">
+                <i class="bi bi-instagram fs-5"></i>
+                <span>府城光彩繡莊</span>
+              </a>
+              <a href="https://line.me/R/ti/p/@guangcai" target="_blank" class="text-white me-3 text-decoration-none ">
+                <i class="bi bi-line fs-5"></i>
+                <span>erica5617</span>
+              </a>
+            </div>
+      
+          </div>
+      
+          <!-- 版權 -->
+          <div class="text-center pt-3 border-top border-secondary">
+            <small>&copy; 2025 光彩繡莊 GuangCai Embroidery. All rights reserved.</small>
+          </div>
+        </div>
+      </footer>
+
+      <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-0 text-center">
+              <img id="modalImage" src="" class="img-fluid rounded shadow" alt="放大圖片">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        const itemsPerPage = 12;
+        const cards = document.querySelectorAll('.products-card');
+        const totalPages = Math.ceil(cards.length / itemsPerPage);
+        const pagination = document.getElementById('pagination');
+      
+        function showPage(page) {
+          cards.forEach((card, index) => {
+            card.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? 'block' : 'none';
+          });
+      
+          // 更新 active 樣式
+          document.querySelectorAll('#pagination .page-link').forEach(link => link.classList.remove('active'));
+          const activeBtn = document.querySelector(`#pagination .page-link[data-page="${page}"]`);
+          if (activeBtn) activeBtn.classList.add('active');
+        }
+      
+        function createPagination() {
+          for (let i = 1; i <= totalPages; i++) {
+            const li = document.createElement('li');
+            li.classList.add('page-item');
+            li.innerHTML = `<a class="page-link" href="#" data-page="${i}">${i}</a>`;
+            li.querySelector('a').addEventListener('click', e => {
+              e.preventDefault();
+              showPage(i);
+            });
+            pagination.appendChild(li);
+          }
+        }
+      
+        createPagination();
+        showPage(1); // 預設顯示第 1 頁
+      </script>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const modalImg = document.getElementById('modalImage');      // Modal 裡的圖片
+          const imageModalEl = document.getElementById('imageModal');  // Modal 外殼
+          const imageModal = new bootstrap.Modal(imageModalEl);        // 初始化 Bootstrap Modal
+      
+          // 找出所有產品圖片，加上點擊事件開啟 Modal
+          document.querySelectorAll('.card-img-top').forEach(img => {
+            img.style.cursor = 'zoom-in'; // 滑鼠提示
+            img.addEventListener('click', () => {
+              modalImg.src = img.src;     // 將圖片塞入 Modal
+              imageModal.show();          // 顯示 Modal
+            });
+          });
+        });
+      </script>
+      <script>
+        function addToCart(name, price, img) {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const existing = cart.find(item => item.name === name);
+          if (existing) {
+            existing.qty += 1;
+          } else {
+            cart.push({ name, price, img, qty: 1 });
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartBadge(); // ✅ 點擊加入購物車後立即刷新右上角數字
+          alert("✅ 已加入購物車！");
+        }
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+          const badge = document.getElementById('cart-count');
+      
+          if (badge) {
+            badge.textContent = totalQty;
+            badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+          }
+        });
+      </script>
+      
+      <!-- ✅ 登入後歡迎名稱 / 登出 -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const name = localStorage.getItem('memberName');
+        const welcomeEl = document.getElementById('memberWelcome');
+        const loginLink = document.getElementById('loginLink');
+        const logoutLink = document.getElementById('logoutLink');
+      
+        if (name) {
+          if (welcomeEl) {
+            welcomeEl.textContent = 'Hi, ' + name;
+            welcomeEl.classList.remove('d-none');
+            welcomeEl.classList.add('nav-link'); // ✅ 讓它有 nav-link 樣式
+          }
+          if (logoutLink) logoutLink.classList.remove('d-none');
+          if (loginLink) loginLink.classList.add('d-none');
+        } else {
+          if (welcomeEl) welcomeEl.classList.add('d-none');
+          if (logoutLink) logoutLink.classList.add('d-none');
+          if (loginLink) loginLink.classList.remove('d-none');
+        }
+      });
+      
+      function logout() {
+        localStorage.removeItem('memberName');
+        window.location.reload();
+      }
+      function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const badge = document.getElementById('cart-count');
+
+      if (badge) {
+        badge.textContent = totalQty;
+        badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCartBadge);
+
+      </script>
+ 
+      
+
+</body>
+</html>
