@@ -6,8 +6,8 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 const twilio = require('twilio');
-const XLSX = require('xlsx'); // 如需產出報表
-// const crypto = require('crypto'); // 如果你之後開啟 NewebPay 可取消註解
+const XLSX = require('xlsx'); // 如果你有要產出 Excel 報表
+// const crypto = require('crypto'); // 如果你未來啟用 NewebPay 再取消註解
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,12 +16,13 @@ const port = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ✅ 靜態網站資料夾
+// ✅ 靜態網站資料夾（HTML 存放地）
 app.use(express.static(path.join(__dirname, 'docs')));
 
 // ✅ 資料庫連線
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
+  port: process.env.DB_PORT || 3306, // 預設為 3306，Railway 會指定 port
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
@@ -69,10 +70,7 @@ app.post('/register', async (req, res) => {
 
   db.query('SELECT * FROM member WHERE email = ?', [email], async (err, results) => {
     if (err) return res.status(500).json({ error: '資料庫錯誤' });
-
-    if (results.length > 0) {
-      return res.status(400).json({ error: '此 Email 已被註冊' });
-    }
+    if (results.length > 0) return res.status(400).json({ error: '此 Email 已被註冊' });
 
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -85,7 +83,7 @@ app.post('/register', async (req, res) => {
         }
       );
     } catch (err) {
-      console.error('❌ 加密失敗:', err);
+      console.error('❌ 密碼加密失敗:', err);
       res.status(500).json({ error: '系統錯誤' });
     }
   });
@@ -97,19 +95,17 @@ app.post('/login', (req, res) => {
 
   db.query('SELECT * FROM member WHERE email = ?', [email], async (err, results) => {
     if (err) return res.status(500).json({ error: '資料庫錯誤' });
-
     if (results.length === 0) return res.status(401).json({ error: '帳號不存在' });
 
     const user = results[0];
     const match = await bcrypt.compare(password, user.password);
-
     if (!match) return res.status(401).json({ error: '密碼錯誤' });
 
     res.json({ message: '登入成功', name: user.name });
   });
 });
 
-// ✅ 訂單列表（管理用）
+// ✅ 訂單列表（僅供管理者查看）
 app.get('/orders', (req, res) => {
   db.query('SELECT * FROM orders ORDER BY created_at DESC', (err, results) => {
     if (err) return res.status(500).json({ error: '資料查詢錯誤' });
@@ -117,7 +113,7 @@ app.get('/orders', (req, res) => {
   });
 });
 
-// ✅ 客戶留言（Email＋簡訊）
+// ✅ 客戶留言（Email＋簡訊通知）
 app.post('/contact', (req, res) => {
   const { name, phone, email, god, source, message } = req.body;
 
@@ -131,7 +127,7 @@ app.post('/contact', (req, res) => {
 
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
-      console.error('❌ 寄信失敗:', err);
+      console.error('❌ 信件寄送失敗:', err);
       return res.status(500).send('留言成功但通知信失敗');
     }
 
@@ -141,18 +137,16 @@ app.post('/contact', (req, res) => {
         from: process.env.TWILIO_PHONE_NUMBER,
         to: process.env.MY_PHONE_NUMBER
       })
-      .then(() => {
-        res.send('留言成功，已通知！');
-      })
+      .then(() => res.send('留言成功，已通知！'))
       .catch(smsErr => {
-        console.error('❌ 簡訊失敗:', smsErr);
+        console.error('❌ 簡訊發送失敗:', smsErr);
         res.send('留言成功但簡訊發送失敗');
       });
   });
 });
 
 /*
-// ✅ NewebPay 金流功能（目前尚未啟用）
+// ✅ NewebPay 金流功能（目前尚未啟用，可未來開啟）
 app.post('/newebpay', (req, res) => {
   const { MerchantOrderNo, Amt, ItemDesc } = req.body;
 
@@ -168,7 +162,6 @@ app.post('/newebpay', (req, res) => {
   };
 
   const query = new URLSearchParams(tradeInfo).toString();
-
   const cipher = crypto.createCipheriv('aes-256-cbc', process.env.HASH_KEY, process.env.HASH_IV);
   let encrypted = cipher.update(query, 'utf8', 'hex');
   encrypted += cipher.final('hex');
