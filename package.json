@@ -1,10 +1,15 @@
 {
+  "name": "guangcai-backend",
+  "version": "1.0.0",
+  "description": "光彩繡莊後端系統",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "body-parser": "^2.2.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "express-session": "^1.18.1",
     "mysql2": "^3.14.0",
     "nodemailer": "^6.10.1",
     "twilio": "^5.5.2",

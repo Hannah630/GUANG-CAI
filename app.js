@@ -1,5 +1,5 @@
-require('dotenv').config();
 // ✅ 引入模組
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const path = require('path');
@@ -7,23 +7,24 @@ const bcrypt = require('bcrypt');
 const XLSX = require('xlsx');
 const nodemailer = require('nodemailer');
 const twilio = require('twilio');
+const crypto = require('crypto');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // ✅ 中介軟體設定
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// ✅ 靜態網站資料夾（放 HTML 等）
+// ✅ 靜態網站資料夾（放 HTML）
 app.use(express.static(path.join(__dirname, 'docs')));
 
 // ✅ 資料庫連線設定
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'member_db'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 db.connect(err => {
@@ -49,7 +50,7 @@ const twilioClient = twilio(
   process.env.TWILIO_AUTH_TOKEN
 );
 
-// ✅ 首頁路由
+// ✅ 首頁
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'docs', 'index.html'));
 });
@@ -82,11 +83,11 @@ app.post('/register', async (req, res) => {
         [name, address, phone, god || null, temple || null, email, hashedPassword],
         (err, result) => {
           if (err) return res.status(500).json({ error: '註冊失敗，請稍後再試' });
-          res.json({ message: '註冊成功！歡迎加入光彩繡莊 🙌' });
+          res.json({ message: '註冊成功！' });
         }
       );
     } catch (error) {
-      console.error('❌ 加密失敗:', error);
+      console.error('❌ 密碼加密失敗:', error);
       res.status(500).json({ error: '密碼加密失敗' });
     }
   });
@@ -114,7 +115,7 @@ app.post('/login', (req, res) => {
   });
 });
 
-// ✅ 訂單報表 API
+// ✅ 訂單列表 API
 app.get('/orders', (req, res) => {
   const sql = 'SELECT * FROM orders ORDER BY created_at DESC';
   db.query(sql, (err, results) => {
@@ -126,40 +127,7 @@ app.get('/orders', (req, res) => {
   });
 });
 
-// ✅ 會員清單 API
-app.get('/members', (req, res) => {
-  const sql = 'SELECT id, name, address, phone, god, temple, email FROM member ORDER BY id DESC';
-  db.query(sql, (err, results) => {
-    if (err) {
-      console.error('❌ 查詢會員資料失敗:', err);
-      return res.status(500).json({ error: '伺服器錯誤' });
-    }
-    res.json(results);
-  });
-});
-
-// ✅ 匯出訂單 Excel
-app.get('/export-orders', (req, res) => {
-  const sql = 'SELECT * FROM orders ORDER BY created_at DESC';
-  db.query(sql, (err, results) => {
-    if (err) {
-      console.error('❌ 匯出失敗:', err);
-      return res.status(500).send('資料匯出失敗');
-    }
-
-    const worksheet = XLSX.utils.json_to_sheet(results);
-    const workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, '訂單報表');
-
-    const buffer = XLSX.write(workbook, { type: 'buffer', bookType: 'xlsx' });
-
-    res.setHeader('Content-Disposition', 'attachment; filename=orders.xlsx');
-    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    res.send(buffer);
-  });
-});
-
-// ✅ 留言寄信 + 發簡訊 API
+// ✅ 留言 API（寄信＋簡訊）
 app.post('/contact', (req, res) => {
   const { name, phone, email, god, source, message } = req.body;
 
@@ -168,43 +136,62 @@ app.post('/contact', (req, res) => {
     to: process.env.GMAIL_USER,
     replyTo: email,
     subject: `💌 客戶留言：${name}`,
-    text: `
-📬 客戶留言通知：
---------------------
-👤 姓名：${name}
-📞 電話：${phone}
-📧 Email：${email}
-🙏 供奉神明：${god || '未填寫'}
-📍 來源：${source || '未填寫'}
-📝 留言內容：
-${message}
-    `
+    text: `留言內容：\n${message}\n聯絡電話：${phone}\n信箱：${email}`
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error('❌ 寄信失敗:', error);
-      return res.status(500).send('留言成功，但通知信寄送失敗');
+      console.error('❌ 信件寄送失敗:', error);
+      return res.status(500).send('留言成功但通知信失敗');
     }
 
-    console.log('✅ 通知信已寄出:', info.response);
-
-    // ✅ 簡訊通知（發送至你自己的手機）
-    twilioClient.messages
-    .create({
-      body: `📩 光彩繡莊留言通知\n來自：${name}\n電話：${phone}\n留言內容：${message || '未填寫'}`,
+    twilioClient.messages.create({
+      body: `📩 有新留言：${name}\n${phone}`,
       from: process.env.TWILIO_PHONE_NUMBER,
       to: process.env.MY_PHONE_NUMBER
-    })
-    .then(msg => {
-      console.log('✅ 簡訊已發送：', msg.sid);
-      res.send('留言成功，我們已收到您的訊息！');
-    })
-    .catch(smsErr => {
+    }).then(() => {
+      res.send('留言成功，已通知！');
+    }).catch(smsErr => {
       console.error('❌ 簡訊發送失敗:', smsErr);
-      res.send('留言成功，但簡訊通知失敗');
+      res.send('留言成功但簡訊失敗');
     });
   });
+});
+
+// ✅ NewebPay 金流付款 API
+app.post('/newebpay', (req, res) => {
+  const { MerchantOrderNo, Amt, ItemDesc } = req.body;
+
+  const tradeInfo = {
+    MerchantID: process.env.MERCHANT_ID,
+    RespondType: 'JSON',
+    TimeStamp: Math.floor(Date.now() / 1000),
+    Version: '2.0',
+    MerchantOrderNo,
+    Amt,
+    ItemDesc,
+    ReturnURL: process.env.RETURN_URL || 'https://yourdomain.com/thankyou.html'
+  };
+
+  const query = new URLSearchParams(tradeInfo).toString();
+
+  const cipher = crypto.createCipheriv('aes-256-cbc', process.env.HASH_KEY, process.env.HASH_IV);
+  let encrypted = cipher.update(query, 'utf8', 'hex');
+  encrypted += cipher.final('hex');
+
+  const hash = crypto.createHash('sha256');
+  hash.update(`HashKey=${process.env.HASH_KEY}&${encrypted}&HashIV=${process.env.HASH_IV}`);
+  const tradeSha = hash.digest('hex').toUpperCase();
+
+  res.send(`
+    <form id="payForm" method="post" action="https://ccore.newebpay.com/MPG/mpg_gateway">
+      <input type="hidden" name="MerchantID" value="${process.env.MERCHANT_ID}" />
+      <input type="hidden" name="TradeInfo" value="${encrypted}" />
+      <input type="hidden" name="TradeSha" value="${tradeSha}" />
+      <input type="hidden" name="Version" value="2.0" />
+    </form>
+    <script>document.getElementById('payForm').submit();</script>
+  `);
 });
 
 // ✅ 啟動伺服器
