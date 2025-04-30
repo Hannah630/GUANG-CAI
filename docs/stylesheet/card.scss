@@ -68,6 +68,15 @@
     
   }
 }
+@media (max-width: 768px) {
+  .purchase-notice {
+    font-size: 14px !important; /* 手機版縮小字體 */
+    line-height: 1.5;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
 
 .form-wrapper {
   max-width: 600px;
