@@ -168,6 +168,13 @@ html, body {
   overflow: hidden;
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover; /* 或嘗試 contain，看哪個效果最好 */
+  }
+}
 /* 左側遮罩 */
 .banner::before {
   content: "";
@@ -186,10 +193,22 @@ html, body {
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 靠左 */
+  justify-content: flex-start;
   padding-left: 8%;
   text-align: left;
-  color: #333333; /* ✅ 深色文字比較清楚 */
+  color: #333; /* 主標顏色 */
+  /* 可考慮加文字陰影讓白底更浮起來一點 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content h1 {
+  color: #333; /* 主標可略深 */
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  color: #666; /* 副標改稍淺灰，對比更柔和 */
+  line-height: 1.6;
 }
 
 .content-wrap {
@@ -202,7 +221,7 @@ html, body {
   margin-bottom: 0px;
   width: 80px;
   padding: 6px;
-  background-color: rgba(255, 255, 255, 0.9); /* ✅ 白色圓底 */
+  background-color: rgb(255, 255, 255); /* ✅ 白色圓底 */
   border-radius: 50%; /* ✅ 圓形 */
   display: inline-block;
 }
