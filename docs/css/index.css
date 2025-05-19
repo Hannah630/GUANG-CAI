@@ -176,7 +176,7 @@ html, body {
   left: 0;
   width: 45%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5); /* 半透明白色 */
+  background: rgba(255, 255, 255, 0.65); /* 半透明白色 */
   z-index: 1;
 }
 
@@ -189,7 +189,7 @@ html, body {
   justify-content: flex-start; /* 靠左 */
   padding-left: 8%;
   text-align: left;
-  color: #030202; /* ✅ 深色文字比較清楚 */
+  color: #333333; /* ✅ 深色文字比較清楚 */
 }
 
 .content-wrap {
@@ -202,7 +202,7 @@ html, body {
   margin-bottom: 0px;
   width: 80px;
   padding: 6px;
-  background-color: rgba(255, 255, 255, 0.85); /* ✅ 白色圓底 */
+  background-color: rgba(255, 255, 255, 0.9); /* ✅ 白色圓底 */
   border-radius: 50%; /* ✅ 圓形 */
   display: inline-block;
 }
