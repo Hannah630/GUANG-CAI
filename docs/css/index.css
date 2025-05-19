@@ -174,9 +174,9 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 50%;
+  width: 45%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.6); /* 半透明白色 */
+  background: rgba(111, 75, 67, 0.75); /* 半透明白色 */
   z-index: 1;
 }
 
@@ -189,7 +189,7 @@ html, body {
   justify-content: flex-start; /* 靠左 */
   padding-left: 8%;
   text-align: left;
-  color: #333; /* ✅ 深色文字比較清楚 */
+  color: #fff; /* ✅ 深色文字比較清楚 */
 }
 
 .content-wrap {
