@@ -177,12 +177,33 @@ html, body {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .banner {
+    height: 50vh;
     background-attachment: scroll;
     background-position: center center;
-    background-size: cover; /* 或嘗試 contain，看哪個效果最好 */
-   
+    background-size: cover;
+    position: relative; /* ← 確保 ::before 定位可用 */
   }
-}
+
+  .banner::before {
+    width: 100% !important;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.65);
+    z-index: 1;
+  }
+
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+} 
+
 
 
 /* 左側遮罩 */
