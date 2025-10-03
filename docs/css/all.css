@@ -1,0 +1,697 @@
+@charset "UTF-8";
+/* 全站使用 Cactus Classical Serif 為主，中英文 fallback 配好 */
+body {
+  font-family: "Cactus Classical Serif", "Noto Sans TC", "Microsoft JhengHei", serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, span .banner-text h1 {
+  font-family: "Cactus Classical Serif", serif;
+  letter-spacing: 1px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Cactus Classical Serif", serif;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #64363C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+#loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#loader::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 0; /* ✅ 確保不蓋住 logo */
+}
+
+.logo {
+  width: 20vw;
+  max-width: 200px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0;
+  animation: fadeInLogo 2s ease forwards;
+  z-index: 1; /* ✅ 蓋在 ::before 上 */
+  position: relative; /* ✅ 讓 z-index 有效 */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 40vw;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.custom-navbar {
+  font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+  color: #fff !important;
+  min-height: 50px;
+  height: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.custom-navbar .navbar-brand {
+  font-family: "Cactus Classical Serif", "Noto Sans TC", serif;
+  letter-spacing: 0.5px;
+  color: #fff !important;
+}
+
+.custom-navbar .nav-link {
+  color: #fff !important;
+  font-family: "Cactus Classical Serif", "Noto Sans TC", serif;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* logo 與文字間距 */
+  height: 56px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.logo-circle {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle img {
+  height: 28px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    min-height: auto;
+    height: auto;
+    padding: 8px 16px; /* 上下8px，左右16px */
+  }
+  .logo-circle {
+    height: 40px;
+    width: 40px;
+  }
+  .logo-circle img {
+    height: 24px;
+  }
+  .navbar-brand-name {
+    font-size: 0.95rem;
+  }
+  .navbar-toggler {
+    padding: 4px 6px;
+  }
+  .navbar-brand {
+    gap: 3px;
+  }
+}
+.navbar-brand-name {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.banner {
+  position: relative;
+  height: 80vh;
+  background-image: url("../pic/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 50vh;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    position: relative; /* ← 確保 ::before 定位可用 */
+  }
+  .banner::before {
+    width: 100% !important;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.65);
+    z-index: 1;
+  }
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+}
+/* 左側遮罩 */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.65); /* 半透明白色 */
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  text-align: left;
+  color: #333; /* 主標顏色 */
+  /* 可考慮加文字陰影讓白底更浮起來一點 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content h1 {
+  color: #333; /* 主標可略深 */
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  color: #666; /* 副標改稍淺灰，對比更柔和 */
+  line-height: 1.6;
+}
+
+.content-wrap {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 0px;
+  width: 80px;
+  padding: 6px;
+  background-color: rgb(255, 255, 255); /* ✅ 白色圓底 */
+  border-radius: 50%; /* ✅ 圓形 */
+  display: inline-block;
+}
+
+.banner-content h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 60vh;
+    background-attachment: scroll;
+  }
+  .banner::before {
+    width: 100%;
+  }
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+  .banner-content img {
+    width: 60px;
+  }
+  .banner-content p {
+    font-size: 1rem;
+  }
+}
+.about-section {
+  position: relative;
+  height: 100vh;
+  background-image: url(../pic/hand.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 82vh;
+    padding: 100px 20px;
+  }
+  .about-section .about-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+  }
+  .about-section .about-img {
+    display: none;
+  }
+}
+.carousel-inner img {
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 陰影加強 */
+  background-color: rgba(252, 250, 242, 0.8);
+  height: 100%;
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.product-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .col-10 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.parallax-wrapper {
+  background-image: url("../pic/parallax-section2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  color: #fff;
+}
+
+.parallax-section-combined {
+  position: relative;
+  background-image: url("../pic/parallax-section3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  z-index: 0;
+}
+
+.parallax-section-combined .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* ✅ 黑色透明遮罩 */
+  z-index: -1; /* 讓它蓋在背景圖上，但不影響內容 */
+}
+
+@media (max-width: 768px) {
+  .move-up-mobile {
+    margin-top: -180px;
+  }
+  .parallax-section-combined {
+    background-attachment: scroll;
+  }
+  .parallax-wrapper {
+    background-attachment: scroll;
+  }
+}
+.card-pic {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.card-pic img {
+  max-height: 260px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card-pic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.card-pic:hover .card-pic-overlay {
+  opacity: 1;
+}
+
+.card-pic-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .card-pic {
+    height: 280px;
+  }
+  .card-pic img {
+    max-height: 180px;
+  }
+  .card-pic-title {
+    font-size: 0.8rem;
+  }
+}
+.main-banner {
+  height: 80vh;
+  background-image: url("../pic/cd.bn.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .main-banner {
+    background-size: contain; /* ✅ 不要裁圖 */
+    background-position: top center;
+    height: auto; /* ✅ 高度讓內容自動決定 */
+    padding-top: 50vw; /* ✅ 保留空間給圖片 */
+  }
+}
+@media (max-width: 768px) {
+  .purchase-notice {
+    font-size: 14px !important; /* 手機版縮小字體 */
+    line-height: 1.5;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+.form-wrapper {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* === 🧊 商品卡片樣式 === */
+.sellproduct-card {
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.sellproduct-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === 手機板：每列只顯示 1 張卡片，左右可滑或點箭頭切換 === */
+@media (max-width: 768px) {
+  .carousel-item > .container > .row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .carousel-item > .container > .row > .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+  }
+  .sellproduct-card {
+    width: 90%;
+    height: auto;
+  }
+  #productCarousel2 .product-carousel-prev,
+  #productCarousel2 .product-carousel-next {
+    display: flex !important;
+  }
+}
+/* === 桌機版：正常顯示 3 卡片一列 === */
+@media (min-width: 769px) {
+  .carousel-item > .container > .row {
+    flex-wrap: nowrap;
+  }
+  .carousel-item > .container > .row > .col {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    display: flex;
+  }
+  .carousel-item > .container > .row > .col > .card {
+    flex: 1;
+  }
+}
+/* === 客製箭頭按鈕（桌機與手機） === */
+#productCarousel2 .product-carousel-prev,
+#productCarousel2 .product-carousel-next {
+  background: transparent;
+  border: none;
+  top: 45%;
+  width: 3rem;
+  height: 3rem;
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#productCarousel2 .product-carousel-prev {
+  left: 0.5rem;
+}
+
+#productCarousel2 .product-carousel-next {
+  right: 0.5rem;
+}
+
+#productCarousel2 .carousel-control-prev-icon,
+#productCarousel2 .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  background-size: 60% 60%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+/* === 修正 RWD 卡片排版支援 Bootstrap col 預設行為 === */
+.row-cols-md-3 > .col {
+  display: flex;
+}
+
+.row-cols-md-3 > .col > .card {
+  flex: 1;
+}
+
+.staff-photo {
+  max-width: 100%;
+  height: auto;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.parallax-wrapper-about {
+  background-image: url("../pic/parallax-wrapper-about.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .parallax-wrapper-about {
+    background-attachment: scroll;
+  }
+}
+.timeline {
+  position: relative;
+  border-left: 3px solid #fff;
+  padding-left: 1.5rem; /* 讓線往右一點 */
+  margin-left: 0.5rem; /* 稍微拉近左邊 */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 1rem; /* 留給文字的空間，不要太多 */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 0.45em; /* ✅ 比 px 更穩定對齊文字中線 */
+  left: -1.9rem;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: #f8f4f0;
+  margin-bottom: 0.2rem;
+}
+
+.timeline-content {
+  font-family: "Cactus Classical Serif", serif;
+  color: #f8f4f0;
+  font-weight: bold;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+}
+
+.sellsproduct-card img {
+  width: 100%;
+  height: 200px; /* 或 220px、180px 可調整 */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media (max-width: 575.98px) {
+  .sellproducts-card {
+    max-width: 90%;
+    margin: auto;
+  }
+  .sellproduct-card img {
+    width: 100%;
+    height: 200px; /* ✅ 可依你需求調整為統一高度 */
+    -o-object-fit: cover;
+       object-fit: cover; /* ✅ 確保圖片不變形、會裁切填滿 */
+    display: block;
+  }
+}
+.pagination .page-link {
+  color: #562E37; /* 主色調 */
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  background-color: white;
+}
+
+.pagination .page-link:hover {
+  background-color: #562E37;
+  color: white;
+  border-color: #562E37;
+}
+
+.pagination .page-link.active,
+.pagination .page-link.active:hover {
+  background-color: #562E37;
+  color: white;
+  border-color: #562E37;
+}
+
+.card-img-top {
+  cursor: zoom-in;
+}

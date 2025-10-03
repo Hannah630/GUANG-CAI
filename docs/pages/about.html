@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg custom-navbar"style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+    <div class="container-fluid">
+      
+      <!-- 左：LOGO（桌面顯示） -->
+      <a class="navbar-brand d-none d-lg-flex align-items-center" href="../index.html">
+        <div class="logo-circle">
+          <img src="../pic/logo.svg" alt="光彩繡莊 Logo">
+        </div>
+        <div class="navbar-brand-name">府城光彩繡莊 GUANG CAI</div>
+      </a>
+    
+        <!-- 左：LOGO（手機顯示） -->
+        <a class="navbar-brand d-lg-none" href="../index.html"><img src="../pic/logo.svg" alt="" style="height: 40px; vertical-align: middle; margin-right: 8px;">府城光彩繡莊</a>
+    
+        <!-- 手機版的漢堡按鈕 -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <!-- 導覽列 -->
+        <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
+          <div class="navbar-nav nav-center">
+            <a class="nav-link" href="../login.html" id="loginLink">會員登入</a>
+              <a href="#" id="memberWelcome" class="nav-link text-white d-none" style="pointer-events: none;"></a>
+              <a href="#" class="nav-link d-none" id="logoutLink" onclick="logout()">登出</a>
+            <a class="nav-link" href="about.html">關於我們</a>
+            <a class="nav-link" href="card.html">繡莊產品</a>
+            <a class="nav-link" href="media.html">社群貼文</a>
+            <a class="nav-link" href="sellproduct.html">典藏精品</a>
+            <a class="nav-link d-inline-flex align-items-center" href="cart.html">
+              購物車
+              <span id="cart-count" class="badge rounded-pill bg-danger ms-2">
+                0
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+  </nav>
+<div class="parallax-wrapper-about">
+  <div class="container mb-5" style="margin-top: -70px;">
+    <h2 class=" text-center mb-3" data-aos="fade" data-aos-duration="1000">傳承與創新的繡職人</h2>
+    <p class="text-center mb-4" data-aos="fade-left"data-aos-duration="2000">在府城光彩繡莊，每一位繡師都是時間的編織者。他們承載著上一代的手藝記憶，也不斷嘗試新的材料與表現形式。</p>
+      <div class="card shadow rounded-4 overflow-hidden" style="max-width: 800px; margin: auto;">
+        <!-- 上半部：創辦人 -->
+        <div class="row g-0">
+          <div class="col-md-4 order-md-2">
+            <img src="../pic/gd.jpg" class="img-fluid w-100 h-100"style="object-fit: cover; object-position: 80% top; max-height: 400px;" alt="創辦人林玉泉" data-aos="fade-left" data-aos-duration="1000"data-aos-delay="300">
+          </div>
+          <div class="col-md-8 d-flex flex-column justify-content-center p-4 bg-light">
+            <h5 class="fw-bold">繡出台灣魂的國寶級大師｜林玉泉 老師</h5>
+            <p class="text-muted mb-0">林玉泉老師擅長立體刺繡，以「一形、二體、三色」聞名。他不追求快速與大量，而是堅持手工、用心、慢工出細活。每一幅作品，不只是繡品，更像是一首靜靜訴說文化的詩。
+              <br>他曾將作品贈與多明尼加總統，也在日本京都展出台灣刺繡之美，把這項傳統技藝帶向世界。<br>
+              阿泉師依然堅守傳統的棉花立體繡，他用生命告訴我們：「傳統不是包袱，是記憶，是價值，是我們從哪裡來的證明。」
+              <br>他不只是一位繡師，更是一位教師、一位傳承者。十多年來，他將自己的技藝與信念一針一線地縫進學生的心裡。
+              <br>「這是我們的文化，值得被珍惜一輩子。」</p>
+          </div>
+        </div>
+    
+        <!-- 分隔線 -->
+        <div class="border-top border-secondary"></div>
+    
+        <!-- 下半部：現任負責人 -->
+        <div class="row g-0">
+          <!-- 圖片在右邊 -->
+          <div class="col-md-4 order-md-1">
+            <img src="../pic/at.jpg" class="img-fluid w-100 h-100"
+              style="object-fit: cover; max-height: 400px;" alt="現任負責人林婕瑀" data-aos="fade-right" data-aos-duration="1000"data-aos-delay="300"data-aos-once="true">
+          </div>
+          <!-- 這邊從 col-md-6 ➜ col-md-8 才能湊滿 12 -->
+          <div class="col-md-8 order-md-1 d-flex flex-column justify-content-center p-4 bg-white">
+            <h5 class="fw-bold">現任CEO｜林婕瑀</h5>
+            <p class="mb-0 text-muted">繼承的是技藝，開創的是新路，二代繡師的光彩願景。<br>
+            林婕瑀，自小在父親林玉泉老師的繡莊裡長大，針線聲與綢緞香，是她最熟悉的童年背景音。<br>
+            出社會輾轉多年回到繡莊，她深信不為了「守成」，而是為了創造傳統的新可能。<br>
+            她開始將年輕人的視角帶入繡藝之中，不只保留立體刺繡的深厚工法，更加入現代設計語彙，讓繡品不再只屬於廟宇與典禮，也能走進日常與國際舞台。<br>
+            她重新打造品牌形象，開發文創商品，參與展覽與跨界合作，更重要的是，吸引一群同樣熱愛文化的年輕繡師加入，為這座老繡莊注入了全新的生命力。</p>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <h2 class="text-center mb-2 "data-aos="fade-down" data-aos-duration="1000">繡莊新生代</h2>
+      <h5 class="text-center mb-4" data-aos="slide-up" data-aos-duration="1000">年輕繡師進駐，傳統手藝正在延續歷史</h5>
+      <div class="row text-center g-4 ">
+        
+        <!-- 前四位繡師 -->
+      <div class="col-6 col-md-3">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-1.jpg" class="img-fluid rounded-circle staff-photo" alt="員工1">
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-2.jpg" class="img-fluid rounded-circle staff-photo" alt="員工2">
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-3.jpg" class="img-fluid rounded-circle staff-photo" alt="員工3">
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-4.jpg" class="img-fluid rounded-circle staff-photo" alt="員工4">
+        </div>
+      </div>
+
+      <!-- ✅ 這是中間的文字卡片 -->
+      <div class="col-8 col-sm-6 col-md-4 mx-auto text-center ">
+        <div class="card border-0 h-100 rounded-4 p-4 d-flex justify-content-center align-items-center text-center" style="background-color: rgba(177, 180, 121, 0.5); border-radius: 5rem; padding: 0px;">
+            <h6 class="text-muted" data-aos="zoom-in" data-aos-duration="1000">傳統刺繡，不再只是上一代的回憶。<br>如今，越來越多年輕人走進繡莊，用他們的創意與熱情，為這門古老工藝注入全新的生命力。<br>在光彩繡莊，是與時俱進的蛻變。無論是結合現代設計、跨界服裝、或是轉化為新媒體的視覺語言，這些新一代繡師以年輕的眼光重新詮釋傳統，讓刺繡不只是手藝，更是一種文化態度。</h6>
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-5.jpg" class="img-fluid rounded-circle staff-photo" alt="員工5">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-6.jpg" class="img-fluid rounded-circle staff-photo" alt="員工6">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-7.jpg" class="img-fluid rounded-circle staff-photo" alt="員工7">
+        </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <div class="card border-0 bg-transparent">
+          <img src="../pic/person-8.jpg" class="img-fluid rounded-circle staff-photo" alt="員工8">
+        </div>
+      </div>
+      </div>
+    </div>
+      
+    <section class="timeline-section py-5">
+      <div class="p-4 rounded shadow col-lg-8 mx-auto position-relative" style="
+      background-image: url(../pic/about-timeline.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow: hidden;">
+      
+      <!-- 加上透明黑色遮罩 -->
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="
+        background-color: rgba(0, 0, 0, 0.5); /* 可改成其他顏色 */
+        z-index: 0;">
+      </div>
+
+      <div class="position-relative z-1">
+        <h2 class="text-center mb-4 " style="color: #f8f4f0;">林玉泉藝師年表</h2>
+
+          <div class="timeline col-lg-8 mx-auto">
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="0" data-aos-duration="800">
+              <div class="timeline-date">1941</div>
+              <div class="timeline-content">出生於臺南市安南區鹽田里</div>
+            </div>
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+              <div class="timeline-date">1958-1960</div>
+              <div class="timeline-content">學習刺繡技藝</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+              <div class="timeline-date">1961-1963</div>
+              <div class="timeline-content">出師，至臺北天華繡莊與錦村繡莊工作</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+              <div class="timeline-date">1964-1966</div>
+              <div class="timeline-content">至屏東服兵役</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+              <div class="timeline-date">1967-1971</div>
+              <div class="timeline-content">至臺南誠美繡莊工作</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+              <div class="timeline-date">1967</div>
+              <div class="timeline-content">與黃清月結婚</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+              <div class="timeline-date">1972</div>
+              <div class="timeline-content">籌措資金創業，開設「芳苑繡莊」，從事繡補代工</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="700" data-aos-duration="800">
+              <div class="timeline-date">1982</div>
+              <div class="timeline-content">開設「府城光彩繡莊」，從事繡補零售生意</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="800" data-aos-duration="800">
+              <div class="timeline-date">2002</div>
+              <div class="timeline-content">長女林婕瑀加入經營</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="900" data-aos-duration="800">
+              <div class="timeline-date">2013-2022</div>
+              <div class="timeline-content">臺南市文化資產管理處「向大師學習系列課程」刺繡講師</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="1000" data-aos-duration="800">
+              <div class="timeline-date">2014</div>
+              <div class="timeline-content">品牌繡補帆布袋獲臺南市長贈送外賓伴手禮</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="1100" data-aos-duration="800">
+              <div class="timeline-date">2019</div>
+              <div class="timeline-content">列冊為臺南市文化資產保存技術保存者</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="1200" data-aos-duration="800">
+              <div class="timeline-date">2022</div>
+              <div class="timeline-content">出版《府城光彩繡莊誌》，由臺南市文化局發行</div>
+            </div>
+            <div class="timeline-item"data-aos="fade-up" data-aos-delay="1300" data-aos-duration="800">
+              <div class="timeline-date">2023</div>
+              <div class="timeline-content">辭世，享壽83歲</div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+</div>
+
+<footer class="text-white pt-5 pb-3 " style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+        <div class="container">
+          <div class="row">
+            
+            <!-- 公司資訊 -->
+            <div class="col-md-6 mb-4">
+              <h5 class="h6 fw-bold">府城光彩繡莊</h5>
+              <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>地址：700台南市中西區永福路二段186-3號</p>
+              <p class="mb-1"><i class="bi bi-person-fill me-2"></i>CEO：林婕瑀</p>
+              <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>電話：0911781115</p>
+              <p class="mb-1"><i class="bi bi-phone-fill me-2"></i>LINE ID：@erica5617</p>
+            </div>
+      
+            <!-- 社群連結 -->
+            <div class="col-md-6 mb-4">
+              <h5 class="h6 fw-bold">聯絡我們</h5>
+              <p>歡迎透過以下平台與我們聯繫：</p>
+              <a href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" class=" text-white me-3 text-decoration-none ">
+                <i class="bi bi-facebook fs-5"></i>
+                <span>府城光彩繡莊</span>
+                
+              </a>
+              <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" class="text-white me-3 text-decoration-none">
+                <i class="bi bi-instagram fs-5"></i>
+                <span>府城光彩繡莊</span>
+              </a>
+              <a href="https://line.me/R/ti/p/@guangcai" target="_blank" class="text-white me-3 text-decoration-none ">
+                <i class="bi bi-line fs-5"></i>
+                <span>erica5617</span>
+              </a>
+            </div>
+      
+          </div>
+      
+          <!-- 版權 -->
+          <div class="text-center pt-3 border-top border-secondary">
+            <small>&copy; 2025 光彩繡莊 GuangCai Embroidery. All rights reserved.</small>
+          </div>
+        </div>
+  </footer>
+      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+          document.getElementById('video-thumbnail').addEventListener('click', function() {
+            // 隱藏縮圖
+            this.style.display = 'none';
+            // 顯示 iframe 播放區
+            document.getElementById('video-player').style.display = 'block';
+            // 加入影片網址並自動播放
+            document.getElementById('youtube-iframe').src = "https://www.youtube.com/embed/bqMGcIEs7Pw?autoplay=1";
+          });
+        </script>
+       <script>
+        window.addEventListener('scroll', function () {
+          const section = document.getElementById('about-us-section');
+          const img = document.querySelector('.parallax-img');
+      
+          const rect = section.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+      
+          if (rect.top < windowHeight && rect.bottom > 0) {
+            const scrollPercent = (windowHeight - rect.top) / (windowHeight + rect.height);
+            const moveY = scrollPercent * 100; // ✅ 垂直移動距離（你可以調整倍數）
+            img.style.transform = `translate(0, calc(${moveY}px - 50%))`;
+          }
+        });
+      </script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+          const badge = document.getElementById('cart-count');
+      
+          if (badge) {
+            badge.textContent = totalQty;
+            badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+          }
+        });
+      </script>
+      
+      <!-- ✅ 登入後歡迎名稱 / 登出 -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const name = localStorage.getItem('memberName');
+        const welcomeEl = document.getElementById('memberWelcome');
+        const loginLink = document.getElementById('loginLink');
+        const logoutLink = document.getElementById('logoutLink');
+      
+        if (name) {
+          if (welcomeEl) {
+            welcomeEl.textContent = 'Hi, ' + name;
+            welcomeEl.classList.remove('d-none');
+            welcomeEl.classList.add('nav-link'); // ✅ 讓它有 nav-link 樣式
+          }
+          if (logoutLink) logoutLink.classList.remove('d-none');
+          if (loginLink) loginLink.classList.add('d-none');
+        } else {
+          if (welcomeEl) welcomeEl.classList.add('d-none');
+          if (logoutLink) logoutLink.classList.add('d-none');
+          if (loginLink) loginLink.classList.remove('d-none');
+        }
+      });
+      
+      function logout() {
+        localStorage.removeItem('memberName');
+        window.location.reload();
+      }
+      function updateCartBadge() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const badge = document.getElementById('cart-count');
+
+      if (badge) {
+        badge.textContent = totalQty;
+        badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', updateCartBadge);
+
+      </script>
+            
+      
+        
+        
+        
+  </body>
+  </html>

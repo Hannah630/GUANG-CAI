@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- 首頁 -->
+  <url>
+    <loc>https://guangcaiart.com.tw/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- 主要子頁面（依你的檔案） -->
+  <url>
+    <loc>https://guangcaiart.com.tw/pages/about.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://guangcaiart.com.tw/pages/sellproduct.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://guangcaiart.com.tw/pages/cart.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://guangcaiart.com.tw/pages/login.html</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://guangcaiart.com.tw/pages/register.html</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+</urlset>

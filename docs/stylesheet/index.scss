@@ -1,0 +1,423 @@
+/* 全站使用 Cactus Classical Serif 為主，中英文 fallback 配好 */
+body {
+  font-family: 'Cactus Classical Serif', 'Noto Sans TC', 'Microsoft JhengHei', serif;
+}
+h1, h2, h3, h4, h5, h6, p, li, span  .banner-text h1 {
+  font-family: 'Cactus Classical Serif', serif;
+  letter-spacing: 1px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Cactus Classical Serif', serif;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #64363C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+#loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#loader::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite ease-in-out;
+  z-index: 0; /* ✅ 確保不蓋住 logo */
+}
+
+.logo {
+  width: 20vw;
+  max-width: 200px;
+  min-width: 100px;
+  height: auto;
+  opacity: 0;
+  animation: fadeInLogo 2s ease forwards;
+  z-index: 1;         /* ✅ 蓋在 ::before 上 */
+  position: relative; /* ✅ 讓 z-index 有效 */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 40vw;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInLogo {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+.custom-navbar {
+  font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+  color: #fff !important;
+  min-height: 50px;
+  height: 50px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.custom-navbar .navbar-brand {
+  font-family: 'Cactus Classical Serif', 'Noto Sans TC', serif;
+  letter-spacing: 0.5px;
+  color: #fff !important;
+}
+
+.custom-navbar .nav-link {
+  color: #fff !important;
+  font-family: 'Cactus Classical Serif', 'Noto Sans TC', serif;
+
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* logo 與文字間距 */
+  height: 56px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.logo-circle {
+  background-color:#fff;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-circle img {
+  height: 28px;
+  width: auto;
+}
+@media (max-width: 768px) {
+  .custom-navbar {
+    min-height: auto;
+    height: auto;
+    padding: 8px 16px; /* 上下8px，左右16px */
+  }
+
+  .logo-circle {
+    height: 40px;
+    width: 40px;
+  }
+
+  .logo-circle img {
+    height: 24px;
+  }
+
+  .navbar-brand-name {
+    font-size: 0.95rem;
+  }
+
+  .navbar-toggler {
+    padding: 4px 6px;
+  }
+  .navbar-brand{
+    gap: 3px;
+  }
+}
+
+
+.navbar-brand-name {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.banner {
+  position: relative;
+  height: 80vh;
+  background-image: url('../pic/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner {
+    height: 50vh;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    position: relative; /* ← 確保 ::before 定位可用 */
+  }
+
+  .banner::before {
+    width: 100% !important;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.65);
+    z-index: 1;
+  }
+
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+} 
+
+
+
+/* 左側遮罩 */
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 45%; height: 100%;
+  background: rgba(255, 255, 255, 0.65); /* 半透明白色 */
+  z-index: 1;
+}
+.banner-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  text-align: left;
+  color: #333; /* 主標顏色 */
+
+  /* 可考慮加文字陰影讓白底更浮起來一點 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.banner-content h1 {
+  color: #333; /* 主標可略深 */
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  color: #666; /* 副標改稍淺灰，對比更柔和 */
+  line-height: 1.6;
+}
+.content-wrap {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 60px;
+  margin-bottom: 0px;
+  width: 80px;
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 1); /* ✅ 白色圓底 */
+  border-radius: 50%; /* ✅ 圓形 */
+  display: inline-block;
+}
+
+
+.banner-content h1 {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .banner{
+    height: 60vh;
+    background-attachment: scroll;
+  }
+  .banner::before {
+    width: 100%;
+  }
+
+  .banner-content {
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .banner-content img {
+    width: 60px;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+  }
+}
+.about-section {
+  position: relative;
+  height: 100vh;
+  background-image: url(../pic/hand.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.1); // 黑色透明
+  z-index: 1;
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    background-attachment: scroll; // ✅ 解決 fixed 問題
+    background-size: cover; // 或改為 cover，根據你想呈現的感覺
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 82vh; // ✅ 不限制高度
+    padding: 100px 20px;
+  }
+
+  .about-section .about-text {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+  }
+
+  .about-section .about-img {
+    display: none;
+  }
+}
+
+
+.carousel-inner img {
+  height: 300px;
+  object-fit: cover;
+}
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 陰影加強 */
+  background-color: rgba(252, 250, 242, 0.8);
+  height: 100%;
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .col-10 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.parallax-wrapper {
+  background-image: url('../pic/parallax-section2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 0;
+  color:#fff;
+}
+.parallax-section-combined {
+  position: relative;
+  background-image: url('../pic/parallax-section3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  z-index: 0;
+}
+
+.parallax-section-combined .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* ✅ 黑色透明遮罩 */
+  z-index: -1; /* 讓它蓋在背景圖上，但不影響內容 */
+}
+
+ @media (max-width: 768px) {
+    .move-up-mobile {
+      margin-top: -180px ;
+    }
+    .parallax-section-combined{
+      background-attachment: scroll;
+    }
+    .parallax-wrapper{
+      background-attachment: scroll;
+    }
+  }
+ 
+

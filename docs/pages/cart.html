@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購物車</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .cart-item img {
+      width: 80px;
+      height: auto;
+      object-fit: cover;
+    }
+    .cart-total {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg custom-navbar"style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+        <div class="container-fluid">
+          
+          <!-- 左：LOGO（桌面顯示） -->
+          <a class="navbar-brand d-none d-lg-flex align-items-center" href="../index.html">
+            <div class="logo-circle">
+              <img src="../pic/logo.svg" alt="光彩繡莊 Logo">
+            </div>
+            <div class="navbar-brand-name">府城光彩繡莊 GUANG CAI</div>
+          </a>
+        
+            <!-- 左：LOGO（手機顯示） -->
+            <a class="navbar-brand d-lg-none" href="../index.html"><img src="../pic/logo.svg" alt="" style="height: 40px; vertical-align: middle; margin-right: 8px;">府城光彩繡莊</a>
+        
+            <!-- 手機版的漢堡按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <!-- 導覽列 -->
+            <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
+              <div class="navbar-nav nav-center">
+                <a class="nav-link" href="../login.html" id="loginLink">會員登入</a>
+              <a href="#" id="memberWelcome" class="nav-link text-white d-none" style="pointer-events: none;"></a>
+              <a href="#" class="nav-link d-none" id="logoutLink" onclick="logout()">登出</a>
+                <a class="nav-link" href="about.html">關於我們</a>
+                <a class="nav-link" href="card.html">繡莊產品</a>
+                <a class="nav-link" href="media.html">社群貼文</a>
+                <a class="nav-link" href="sellproduct.html">典藏精品</a>
+                <a class="nav-link d-inline-flex align-items-center" href="cart.html">
+                  購物車
+                  <span id="cart-count" class="badge rounded-pill bg-danger ms-2">
+                    0
+                  </span>
+                </a>
+                
+              </div>
+            </div>
+          </div>
+      </nav>
+      
+      <div class="parallax-wrapper-about"> 
+        <div class="container py-5">
+            <h2 class="mb-4">🛒 購物車</h2>
+            <div id="cart-items" class="list-group mb-4"></div>
+            <div class="d-flex justify-content-between align-items-center">
+            <div class="cart-total">總金額：NT$ <span id="cart-total">0</span></div>
+            <button class="btn btn-dark" onclick="goToPayment()">前往付款</button>
+            <button class="btn btn-danger" onclick="clearCart()">清空購物車</button>
+            </div>
+        </div>
+      </div>
+
+    <footer class="text-white pt-5 pb-3 " style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+        <div class="container">
+          <div class="row">
+            
+            <!-- 公司資訊 -->
+            <div class="col-md-6 mb-4">
+              <h5 class="h6 fw-bold">府城光彩繡莊</h5>
+              <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>地址：700台南市中西區永福路二段186-3號</p>
+              <p class="mb-1"><i class="bi bi-person-fill me-2"></i>CEO：林婕瑀</p>
+              <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>電話：0911781115</p>
+              <p class="mb-1"><i class="bi bi-phone-fill me-2"></i>LINE ID：@erica5617</p>
+            </div>
+      
+            <!-- 社群連結 -->
+            <div class="col-md-6 mb-4">
+              <h5 class="h6 fw-bold">聯絡我們</h5>
+              <p>歡迎透過以下平台與我們聯繫：</p>
+              <a href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" class=" text-white me-3 text-decoration-none ">
+                <i class="bi bi-facebook fs-5"></i>
+                <span>府城光彩繡莊</span>
+                
+              </a>
+              <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" class="text-white me-3 text-decoration-none">
+                <i class="bi bi-instagram fs-5"></i>
+                <span>府城光彩繡莊</span>
+              </a>
+              <a href="https://line.me/R/ti/p/@guangcai" target="_blank" class="text-white me-3 text-decoration-none ">
+                <i class="bi bi-line fs-5"></i>
+                <span>erica5617</span>
+              </a>
+            </div>
+      
+          </div>
+      
+          <!-- 版權 -->
+          <div class="text-center pt-3 border-top border-secondary">
+            <small>&copy; 2025 光彩繡莊 GuangCai Embroidery. All rights reserved.</small>
+          </div>
+        </div>
+      </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // 從 localStorage 讀取購物車資料
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'list-group-item cart-item d-flex align-items-center justify-content-between';
+
+        const subtotal = item.price * item.qty;
+        total += subtotal;
+
+        itemEl.innerHTML = `
+          <div class="d-flex align-items-center gap-3">
+            <img src="${item.img}" alt="${item.name}">
+            <div>
+              <h6 class="mb-1">${item.name}</h6>
+              <div class="text-muted">NT$${item.price} × ${item.qty}</div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline-secondary btn-sm me-1" onclick="updateQty(${index}, -1)">-</button>
+            <button class="btn btn-outline-secondary btn-sm me-3" onclick="updateQty(${index}, 1)">+</button>
+            <button class="btn btn-outline-danger btn-sm" onclick="removeItem(${index})">刪除</button>
+          </div>
+        `;
+
+        cartItemsContainer.appendChild(itemEl);
+      });
+
+      cartTotal.textContent = total;
+    }
+
+    function updateQty(index, delta) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartBadge(); // ✅ 點擊加入購物車後立即刷新右上角數字
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartBadge(); // ✅ 點擊加入購物車後立即刷新右上角數字
+
+      renderCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      location.reload();
+    }
+
+    renderCart();
+    function goToPayment() {
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      const items = cart.map(item => `${item.name} × ${item.qty}`).join(', ');
+
+      localStorage.setItem('paymentAmt', total);
+      localStorage.setItem('paymentDesc', items);
+      localStorage.setItem('paymentOrderNo', 'ORDER' + Date.now());
+
+      location.href = 'newebpay-test.html'; // ✅ 依照你實際付款頁的路徑修改
+    }
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const badge = document.getElementById('cart-count');
+  
+      if (badge) {
+        badge.textContent = totalQty;
+        badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+      }
+    });
+  </script>
+  
+  <!-- ✅ 登入後歡迎名稱 / 登出 -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+   const name = localStorage.getItem('memberName');
+   const welcomeEl = document.getElementById('memberWelcome');
+   const loginLink = document.getElementById('loginLink');
+   const logoutLink = document.getElementById('logoutLink');
+ 
+   if (name) {
+     if (welcomeEl) {
+       welcomeEl.textContent = 'Hi, ' + name;
+       welcomeEl.classList.remove('d-none');
+       welcomeEl.classList.add('nav-link'); // ✅ 讓它有 nav-link 樣式
+     }
+     if (logoutLink) logoutLink.classList.remove('d-none');
+     if (loginLink) loginLink.classList.add('d-none');
+   } else {
+     if (welcomeEl) welcomeEl.classList.add('d-none');
+     if (logoutLink) logoutLink.classList.add('d-none');
+     if (loginLink) loginLink.classList.remove('d-none');
+   }
+ });
+ 
+ function logout() {
+   localStorage.removeItem('memberName');
+   window.location.reload();
+ }
+ function updateCartBadge() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  const badge = document.getElementById('cart-count');
+
+  if (badge) {
+    badge.textContent = totalQty;
+    badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', updateCartBadge);
+
+ </script>
+
+</body>
+</html>
