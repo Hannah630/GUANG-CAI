@@ -37,8 +37,58 @@
     }
 
     .cart-total {
-      font-size: 1.5rem;
+      font-size: 1.125rem;
       font-weight: bold;
+    }
+
+    /* Cart page tweaks: make buttons consistent and layout stable */
+    .cart-summary {
+      white-space: nowrap;
+      /* keep total on one line */
+    }
+
+    .cart-total {
+      display: block;
+      /* ensure it occupies its own row */
+      text-align: right;
+    }
+
+    .cart-action-group {
+      display: inline-flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      min-width: 140px;
+      padding: 0.5rem 0.9rem;
+      white-space: nowrap;
+    }
+
+    /* quantity buttons consistency inside list items */
+    .cart-item .btn {
+      min-width: 34px;
+      height: 34px;
+      padding: 0.15rem 0.45rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart-item .btn-outline-secondary {
+      border-radius: 6px;
+    }
+
+    /* Reduce gap between navbar and the container on this page */
+    .parallax-wrapper-about>.container {
+      margin-top: -40px;
+      padding-top: 12px;
+    }
+
+    @media (max-width: 576px) {
+      .parallax-wrapper-about>.container {
+        margin-top: -20px;
+      }
     }
   </style>
 </head>
@@ -90,12 +140,15 @@
 
   <div class="parallax-wrapper-about">
     <div class="container py-5">
-      <h2 class="mb-4">🛒 購物車</h2>
+      <h2 class="mb-4">購物車</h2>
       <div id="cart-items" class="list-group mb-4"></div>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="cart-total">總金額：NT$ <span id="cart-total">0</span></div>
-        <button class="btn btn-dark" onclick="goToPayment()">前往付款</button>
-        <button class="btn btn-danger" onclick="clearCart()">清空購物車</button>
+
+      <div class="cart-summary text-end">
+        <div class="cart-total mb-3">總金額：NT$ <span id="cart-total">0</span></div>
+        <div class="d-inline-flex justify-content-center align-items-center gap-3 cart-action-group">
+          <button class="btn btn-dark btn-action" onclick="goToPayment()">前往付款</button>
+          <button class="btn btn-danger btn-action" onclick="clearCart()">清空購物車</button>
+        </div>
       </div>
     </div>
   </div>

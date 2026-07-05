@@ -1439,3 +1439,68 @@ body {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.95)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
 }
+
+/* 全站按鈕風格覆寫：確保各頁面按鈕色調一致 */
+.btn-dark,
+.btn.btn-dark {
+  background-color: #562e37 !important; /* 品牌深咖色 */
+  border-color: #562e37 !important;
+  color: #fff !important;
+}
+.btn-dark:hover,
+.btn-dark:focus {
+  background-color: #48262a !important;
+  border-color: #48262a !important;
+}
+
+.btn-danger,
+.btn.btn-danger {
+  background-color: #b93a3a !important; /* 統一的 danger 色調 */
+  border-color: #b93a3a !important;
+  color: #fff !important;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #9f3131 !important;
+  border-color: #9f3131 !important;
+}
+
+.btn-outline-dark {
+  color: #562e37 !important;
+  border-color: #562e37 !important;
+}
+.btn-outline-light {
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Footer: 統一字體樣式，不使用粗體 */
+footer,
+footer * {
+  font-weight: 400 !important;
+  font-family:
+    "Cactus Classical Serif", "Noto Sans TC", "Microsoft JhengHei", serif !important;
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer .h6 {
+  font-weight: 400 !important;
+}
+
+footer a {
+  font-weight: 400 !important;
+  text-decoration: none;
+}
+
+/* 更高特異性覆寫：覆蓋 Bootstrap 的 .fw-bold 與標籤 */
+footer .fw-bold,
+footer .fw-semibold,
+footer strong,
+footer b {
+  font-weight: 400 !important;
+}
