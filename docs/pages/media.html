@@ -25,36 +25,90 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <style>
+    /* 社群 hero 字級與間距 */
     .social-hero h1,
     .social-hero__title-en {
       display: inline-block;
       margin: 0;
-      margin-right: 0.75rem;
+      line-height: 1.05;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
       vertical-align: middle;
     }
 
+    /* 內容段落基準字級（確保較小於標題） */
     .social-hero p {
       margin-top: 0.75rem;
+      font-size: 1rem;
+      color: #fff;
     }
 
-    .social-hero__title-en {
-      font-size: 1.25rem;
+    /* 中文主標（較大） */
+    .social-hero h1 {
+      font-size: 2.4rem;
       font-weight: 400;
+      /* 調整為常規字重，不要粗體 */
+      color: #fff;
+      line-height: 1.05;
+    }
 
-      .social-hero p {
-        margin-top: 0.25rem;
-      }
-
+    /* 英文標題（次要但仍大於段落） */
+    .social-hero__title-en {
+      font-size: 1.9rem;
+      font-weight: 400;
       color: #f8f8f8;
+      line-height: 1;
+    }
+
+    /* 英文副標（次描述） */
+    .social-hero__sub-en {
+      font-size: 0.95rem;
+      color: #eee;
+      margin-top: 0.5rem;
+    }
+
+    /* eyebrow 小標色彩：質感金黃色 */
+    .social-hero__eyebrow {
+      color: #D4AF37 !important;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    /* 讓英文標題下方的中文段落（主說明）與上方標題保持較大間距 */
+    .social-hero__title-en+p {
+      margin-top: 1.6rem;
     }
 
     @media (max-width: 576px) {
 
+      /* 手機：保持同行但標題仍大於段落 */
       .social-hero h1,
       .social-hero__title-en {
-        display: block;
+        display: inline-block;
+        font-size: 1.1rem;
+        /* 標題略大於段落 */
+        white-space: nowrap;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
+
+      .social-hero p {
+        font-size: 0.95rem;
+        /* 手機段落字級較小 */
+        margin-top: 0.6rem;
+      }
+    }
+
+    /* 手機版：社群列表左右留白，避免緊貼螢幕邊緣 */
+    @media (max-width: 576px) {
+      .social-post-nav .social-post-list {
+        padding: 0 1rem;
       }
     }
   </style>
@@ -152,12 +206,13 @@
             <span>府城光彩繡莊</span>
 
           </a>
-          <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" rel="noopener noreferrer"
-            class="text-white me-3 text-decoration-none">
+          <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank"
+            rel="noopener noreferrer" class="text-white me-3 text-decoration-none">
             <i class="bi bi-instagram fs-5"></i>
             <span>府城光彩繡莊</span>
           </a>
-          <a href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer" class="text-white me-3 text-decoration-none ">
+          <a href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer"
+            class="text-white me-3 text-decoration-none ">
             <i class="bi bi-line fs-5"></i>
             <span>erica5617</span>
           </a>
@@ -627,7 +682,7 @@
     });
   </script>
   <script async src="https://www.instagram.com/embed.js" onload="processSocialEmbeds()"></script>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 
 </html>

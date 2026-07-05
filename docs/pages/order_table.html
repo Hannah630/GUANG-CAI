@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,11 +26,13 @@
       background-color: #fdfdfd;
       font-family: 'Noto Sans TC', sans-serif;
     }
+
     .search-box {
       max-width: 300px;
     }
   </style>
 </head>
+
 <body>
   <div class="container my-5">
     <h2 class="mb-4 text-center">📦 訂單報表</h2>
@@ -68,15 +71,18 @@
 
   <div class="floating-contact" id="floatingContact" aria-label="快速聯絡">
     <div class="floating-contact__menu" id="floatingContactMenu">
-      <a class="floating-contact__item" href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer" aria-label="LINE 官方帳號">
+      <a class="floating-contact__item" href="https://line.me/R/ti/p/@guangcai" target="_blank"
+        rel="noopener noreferrer" aria-label="LINE 官方帳號">
         <span class="floating-contact__label">LINE 官方帳號</span>
         <span class="floating-contact__icon"><i class="bi bi-line" aria-hidden="true"></i></span>
       </a>
-      <a class="floating-contact__item" href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁">
+      <a class="floating-contact__item" href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr"
+        target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁">
         <span class="floating-contact__label">Facebook 粉絲專頁</span>
         <span class="floating-contact__icon"><i class="bi bi-facebook" aria-hidden="true"></i></span>
       </a>
-      <a class="floating-contact__item" href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <a class="floating-contact__item" href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w"
+        target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <span class="floating-contact__label">Instagram</span>
         <span class="floating-contact__icon"><i class="bi bi-instagram" aria-hidden="true"></i></span>
       </a>
@@ -85,7 +91,8 @@
         <span class="floating-contact__icon"><i class="bi bi-telephone-fill" aria-hidden="true"></i></span>
       </a>
     </div>
-    <button class="floating-contact__toggle" id="floatingContactToggle" type="button" aria-controls="floatingContactMenu" aria-expanded="false" aria-label="展開聯絡方式">
+    <button class="floating-contact__toggle" id="floatingContactToggle" type="button"
+      aria-controls="floatingContactMenu" aria-expanded="false" aria-label="展開聯絡方式">
       <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
     </button>
   </div>
@@ -163,6 +170,7 @@
       XLSX.writeFile(wb, `訂單報表_${new Date().toISOString().slice(0, 10)}.xlsx`);
     }
   </script>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
+
 </html>

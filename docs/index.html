@@ -32,6 +32,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap"
     rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="pic/cover.jpg">
   <style>
     .official-announcement__en {
       color: #555;
@@ -139,7 +142,9 @@
         <p>若收到任何非官方訊息、要求匯款、加入私人帳號等情況，請務必提高警覺。</p>
         <p>目前最新公告皆以官方 Instagram 及本網站為主。</p>
         <p class="official-announcement__en">Official announcement: Our official Facebook page has been impersonated. We
-          are actively addressing the issue.</p>
+          <script async src="https://www.instagram.com/embed.js" onload="processOfficialInstagramEmbed()"></script>
+          are actively addressing the issue.
+        </p>
         <p class="official-announcement__en">Please be cautious of any non-official messages requesting payment or
           asking you to add private accounts.</p>
         <p class="official-announcement__en">Latest updates will be posted on our official Instagram and this website.
@@ -232,8 +237,9 @@
               <h5 class="card-title fw-bold pb-3">JUST IN XX 周裕穎</h5>
               <p class="card-text">行走在時代的洪流中，刺出台灣工藝新高度。
                 設計師 JUST IN XX 與府城百年刺繡品牌光彩繡莊攜手，透過層層繡線與創新視角，讓傳統刺繡走上世界舞台，展現台灣工藝的當代力量。</p>
-                <p class="text-muted small mt-2">資訊來源：<a href="https://www.facebook.com/justinxx.official?locale=zh_TW"
-                  target="_blank" rel="noopener noreferrer" class=" text-muted text-decoration-none">JUST IN XX 周裕穎 </a></p>
+              <p class="text-muted small mt-2">資訊來源：<a href="https://www.facebook.com/justinxx.official?locale=zh_TW"
+                  target="_blank" rel="noopener noreferrer" class=" text-muted text-decoration-none">JUST IN XX 周裕穎 </a>
+              </p>
             </div>
           </div>
         </div>
@@ -265,8 +271,9 @@
               <h5 class="card-title fw-bold pb-3">陳普 x 《饗 A Joy》 x 光彩繡莊 </h5>
               <p class="card-text">攜手藝術家陳普，合作打造大型彩繡作品《島嶼》，結合島嶼意象、筆墨圖像與溫潤的白銀金線，在「乘城」與「戀戀」空間中，細緻演繹山形與鳥景，將台灣土地的記憶化為流動的織線藝術。
                 從筆觸到針腳，傳統不只是被保存，更在餐桌與空間中被重新詮釋。</p>
-                <p class="text-muted small mt-2">資訊來源：<a href="https://www.marieclaire.com.tw/lifestyle/taste/83430"
-                  target="_blank" rel="noopener noreferrer" class=" text-muted text-decoration-none">美麗佳人marie claire</a></p>
+              <p class="text-muted small mt-2">資訊來源：<a href="https://www.marieclaire.com.tw/lifestyle/taste/83430"
+                  target="_blank" rel="noopener noreferrer" class=" text-muted text-decoration-none">美麗佳人marie
+                  claire</a></p>
             </div>
           </div>
         </div>
@@ -300,8 +307,8 @@
                 <h5 class="card-title fw-bold pb-3">邱國峻—《走神》</h5>
                 <p class="card-text">藝術家邱國峻以攝影結合台灣傳統刺繡工藝，希望開啟攝影與宗教媒材的對話關係，他透過系列創作，探討台灣人與神明之間，特有的互動關係與糾結情感。</p>
                 <p class="text-muted small mt-2 ">資訊來源：<a
-                  href="https://artbank.tfaf.org.tw/work_page.aspx?RNO=MXM6MZM8MDMSM8MD" target="_blank" rel="noopener noreferrer"
-                  class=" text-muted text-decoration-none ">藝術銀行</a></p>
+                    href="https://artbank.tfaf.org.tw/work_page.aspx?RNO=MXM6MZM8MDMSM8MD" target="_blank"
+                    rel="noopener noreferrer" class=" text-muted text-decoration-none ">藝術銀行</a></p>
               </div>
             </div>
           </div>
@@ -523,8 +530,8 @@
     </button>
   </div>
 
-  <!-- ✅ AOS 動畫初始化 -->
-  <!-- ✅ AOS 動畫初始化 -->
+  <!--  AOS 動畫初始化 -->
+  <!-- AOS 動畫初始化 -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -534,10 +541,10 @@
     });
   </script>
 
-  <!-- ✅ Bootstrap JS -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- ✅ YouTube 點擊播放邏輯 -->
+  <!--  YouTube 點擊播放邏輯 -->
   <script>
     const thumbnail = document.getElementById('video-thumbnail');
     if (thumbnail) {
@@ -549,7 +556,7 @@
     }
   </script>
 
-  <!-- ✅ Parallax 圖片移動邏輯（若有使用） -->
+  <!--  Parallax 圖片移動邏輯（若有使用） -->
   <script>
     window.addEventListener('scroll', function () {
       const section = document.getElementById('about-us-section');
@@ -626,8 +633,7 @@
       }
     }
   </script>
-  <script async src="https://www.instagram.com/embed.js" onload="processOfficialInstagramEmbed()"></script>
-  <script src="pages/main.js"></script>
+  <script src="pages/main.js" defer></script>
 </body>
 
 </html>

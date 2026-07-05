@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="UTF-8">
   <title>會員登入</title>
@@ -23,14 +24,19 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
- <!-- Google Fonts: Cactus Classical Serif + Noto Sans TC 中文備援 -->
-  <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Cactus Classical Serif + Noto Sans TC 中文備援 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Noto+Sans+TC:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <style>
   body {
     font-family: 'Noto Sans TC', sans-serif;
     background-color: #f9f9f9;
   }
+
   .form-container {
     background: #fff;
     padding: 40px;
@@ -40,10 +46,12 @@
     max-width: 420px;
   }
 </style>
+
 <body>
-  <nav class="navbar navbar-expand-lg custom-navbar"style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+  <nav class="navbar navbar-expand-lg custom-navbar"
+    style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
     <div class="container-fluid">
-      
+
       <!-- 左：LOGO（桌面顯示） -->
       <a class="navbar-brand d-none d-lg-flex align-items-center" href="index.html">
         <div class="logo-circle">
@@ -51,31 +59,32 @@
         </div>
         <div class="navbar-brand-name">府城光彩繡莊 GUANG CAI</div>
       </a>
-    
-        <!-- 左：LOGO（手機顯示） -->
-        <a class="navbar-brand d-lg-none" href="index.html"><img src="../pic/logo.svg" alt="" style="height: 40px; vertical-align: middle; margin-right: 8px;">府城光彩繡莊</a>
-    
-        <!-- 手機版的漢堡按鈕 -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <!-- 導覽列 -->
-        <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
-          <div class="navbar-nav nav-center">
-            <a class="nav-link" href="login.html" id="loginLink">會員登入</a>
-            <a href="#" id="memberWelcome" class="nav-link text-white d-none" style="pointer-events: none;"></a>
-            <a href="#" class="nav-link d-none" id="logoutLink" onclick="logout()">登出</a>
-            <a class="nav-link" href="pages/about.html">關於我們</a>
-            <a class="nav-link" href="pages/card.html">繡莊產品</a>
-            <a class="nav-link" href="pages/media.html">社群貼文</a>
-            <a class="nav-link" href="pages/sellproduct.html">典藏精品</a>
-            <a class="nav-link" href="pages/cart.html">購物車</a>
-            <a id="orderReportLink" href="pages/order_table.html" class="nav-link d-none">訂單報表</a>
-          </div>
+
+      <!-- 左：LOGO（手機顯示） -->
+      <a class="navbar-brand d-lg-none" href="index.html"><img src="../pic/logo.svg" alt=""
+          style="height: 40px; vertical-align: middle; margin-right: 8px;">府城光彩繡莊</a>
+
+      <!-- 手機版的漢堡按鈕 -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 導覽列 -->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="navbarNavAltMarkup">
+        <div class="navbar-nav nav-center">
+          <a class="nav-link" href="login.html" id="loginLink">會員登入</a>
+          <a href="#" id="memberWelcome" class="nav-link text-white d-none" style="pointer-events: none;"></a>
+          <a href="#" class="nav-link d-none" id="logoutLink" onclick="logout()">登出</a>
+          <a class="nav-link" href="pages/about.html">關於我們</a>
+          <a class="nav-link" href="pages/card.html">繡莊產品</a>
+          <a class="nav-link" href="pages/media.html">社群貼文</a>
+          <a class="nav-link" href="pages/sellproduct.html">典藏精品</a>
+          <a class="nav-link" href="pages/cart.html">購物車</a>
+          <a id="orderReportLink" href="pages/order_table.html" class="nav-link d-none">訂單報表</a>
         </div>
       </div>
+    </div>
   </nav>
 
   <div class="parallax-wrapper-about">
@@ -94,27 +103,28 @@
           <div class="d-grid mb-2">
             <button type="submit" class="btn btn-dark">登入</button>
           </div>
-          
+
           <!-- 新增：尚未註冊按鈕 -->
           <div class="text-center mb-3">
             <a href="register.html" class="btn btn-outline-secondary btn-sm">
               尚未註冊？點我註冊
             </a>
           </div>
-          
+
           <div id="loginMessage" class="mt-3 text-center fw-bold"></div>
-          
+
         </form>
       </div>
     </div>
-    
-    
-</div>
 
-  <footer class="text-white pt-5 pb-3 " style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
+
+  </div>
+
+  <footer class="text-white pt-5 pb-3 "
+    style="background: linear-gradient(to bottom, #64363C 0%, #60373E 50%, #562E37 100%) !important;">
     <div class="container">
       <div class="row">
-        
+
         <!-- 公司資訊 -->
         <div class="col-md-6 mb-4">
           <h5 class="fw-bold">府城光彩繡莊</h5>
@@ -123,28 +133,31 @@
           <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>電話：0911781115</p>
           <p class="mb-1"><i class="bi bi-phone-fill me-2"></i>LINE ID：@guangcai</p>
         </div>
-  
+
         <!-- 社群連結 -->
         <div class="col-md-6 mb-4">
           <h5 class="fw-bold">聯絡我們</h5>
           <p>歡迎透過以下平台與我們聯繫：</p>
-          <a href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class=" text-white me-3 text-decoration-none ">
+          <a href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer"
+            class=" text-white me-3 text-decoration-none ">
             <i class="bi bi-facebook fs-5"></i>
             <span>府城光彩繡莊</span>
-            
+
           </a>
-          <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" rel="noopener noreferrer" class="text-white me-3 text-decoration-none">
+          <a href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank"
+            rel="noopener noreferrer" class="text-white me-3 text-decoration-none">
             <i class="bi bi-instagram fs-5"></i>
             <span>府城光彩繡莊</span>
           </a>
-          <a href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer" class="text-white me-3 text-decoration-none ">
+          <a href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer"
+            class="text-white me-3 text-decoration-none ">
             <i class="bi bi-line fs-5"></i>
           </a>
           <span>erica5617</span>
         </div>
-  
+
       </div>
-  
+
       <!-- 版權 -->
       <div class="text-center pt-3 border-top border-secondary">
         <small>&copy; 2025 光彩繡莊 GuangCai Embroidery. All rights reserved.</small>
@@ -154,15 +167,18 @@
 
   <div class="floating-contact" id="floatingContact" aria-label="快速聯絡">
     <div class="floating-contact__menu" id="floatingContactMenu">
-      <a class="floating-contact__item" href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer" aria-label="LINE 官方帳號">
+      <a class="floating-contact__item" href="https://line.me/R/ti/p/@guangcai" target="_blank"
+        rel="noopener noreferrer" aria-label="LINE 官方帳號">
         <span class="floating-contact__label">LINE 官方帳號</span>
         <span class="floating-contact__icon"><i class="bi bi-line" aria-hidden="true"></i></span>
       </a>
-      <a class="floating-contact__item" href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁">
+      <a class="floating-contact__item" href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr"
+        target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁">
         <span class="floating-contact__label">Facebook 粉絲專頁</span>
         <span class="floating-contact__icon"><i class="bi bi-facebook" aria-hidden="true"></i></span>
       </a>
-      <a class="floating-contact__item" href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <a class="floating-contact__item" href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w"
+        target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <span class="floating-contact__label">Instagram</span>
         <span class="floating-contact__icon"><i class="bi bi-instagram" aria-hidden="true"></i></span>
       </a>
@@ -171,7 +187,8 @@
         <span class="floating-contact__icon"><i class="bi bi-telephone-fill" aria-hidden="true"></i></span>
       </a>
     </div>
-    <button class="floating-contact__toggle" id="floatingContactToggle" type="button" aria-controls="floatingContactMenu" aria-expanded="false" aria-label="展開聯絡方式">
+    <button class="floating-contact__toggle" id="floatingContactToggle" type="button"
+      aria-controls="floatingContactMenu" aria-expanded="false" aria-label="展開聯絡方式">
       <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
     </button>
   </div>
@@ -179,43 +196,43 @@
   <script>
     document.getElementById('loginForm').addEventListener('submit', async function (e) {
       e.preventDefault();
-  
+
       const form = e.target;
       const email = form.email.value.trim();
       const password = form.password.value;
       const messageEl = document.getElementById('loginMessage');
-  
+
       try {
         const res = await fetch('/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
         });
-  
+
         const data = await res.json();
-  
+
         if (res.ok && data.message && data.name) {
           // ✅ 儲存登入者名字到 localStorage
           localStorage.setItem('memberName', data.name);
-  
+
           // ✅ 如果是老闆就記錄 isAdmin
           if (data.name === '林婕瑀') {
             localStorage.setItem('isAdmin', 'true');
           } else {
             localStorage.setItem('isAdmin', 'false');
           }
-  
+
           // ✅ 顯示成功訊息
           messageEl.textContent = '✅ 登入成功，歡迎 ' + data.name;
           messageEl.className = 'text-success mt-3 fw-bold';
 
           // ✅ 如果是老闆就記錄 isAdmin
-        if (data.name === '林婕瑀') {
-          localStorage.setItem('isAdmin', 'true');
-        } else {
-          localStorage.setItem('isAdmin', 'false');
-        }
-  
+          if (data.name === '林婕瑀') {
+            localStorage.setItem('isAdmin', 'true');
+          } else {
+            localStorage.setItem('isAdmin', 'false');
+          }
+
           // ✅ 延遲導向首頁
           setTimeout(() => {
             window.location.href = 'index.html';
@@ -235,14 +252,15 @@
     document.addEventListener('DOMContentLoaded', () => {
       const isAdmin = localStorage.getItem('isAdmin');
       const reportLink = document.getElementById('orderReportLink');
-  
+
       if (isAdmin === 'true' && reportLink) {
         reportLink.classList.remove('d-none'); // ✅ 顯示訂單報表
       }
     });
   </script>
-  
-  
-<script src="pages/main.js"></script>
+
+
+  <script src="pages/main.js"></script>
 </body>
+
 </html>
