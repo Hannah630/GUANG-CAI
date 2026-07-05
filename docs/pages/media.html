@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>社群貼文</title>
+    <title>社群貼文｜府城光彩繡莊 GUANG CAI</title>
+    <meta name="description" content="整理府城光彩繡莊 Facebook 與 Instagram 社群貼文，記錄傳統刺繡作品、活動紀錄與工藝推廣。">
+    <meta property="og:title" content="社群貼文｜府城光彩繡莊 GUANG CAI">
+    <meta property="og:description" content="整理府城光彩繡莊 Facebook 與 Instagram 社群貼文，記錄傳統刺繡作品、活動紀錄與工藝推廣。">
+    <meta property="og:url" content="https://guangcaiart.com.tw/pages/media.html">
     <link rel="stylesheet" href="../css/all.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -53,55 +57,21 @@
           </div>
       </nav>
 
-      <section class="py-5" style="background-color: #f9f7f4;">
-        <div class="container text-center">
-          <h2 class="mb-3">社群報導與合作紀錄</h2>
-          <p class="text-muted h6">光彩繡莊近年積極參與跨界展演與工藝合作<br>精彩片段如下：</p>
-        </div>
-      
-        <!-- Facebook 貼文 -->
-        <div class="container mt-5">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8" style="max-width: 600px;">
-              <iframe 
-                src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fstory.php%3Fstory_fbid%3Dpfbid02T1YBNdLqwRYJeuEzMDrsW78o833ZQKKkWoStgajpNzfS7udst93VtR3yqwkrtZxAl%26id%3D100057424841273&show_text=true&width=500"
-                width="100%" 
-                height="780" 
-                style="border:none;overflow:hidden" 
-                scrolling="no" 
-                frameborder="0" 
-                allowfullscreen="true" 
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-              </iframe>
-            </div>
+      <main class="social-page">
+        <section class="social-hero">
+          <div class="container">
+            <p class="social-hero__eyebrow">GUANG CAI SOCIAL</p>
+            <h1>社群貼文</h1>
+            <p>記錄府城光彩繡莊的日常、作品與工藝推廣</p>
           </div>
-        </div>
-      
-        <!-- 分隔線 -->
-        <hr class="my-4" style="border: none; border-top: 1px solid #999; width: 90%; max-width: 600px; margin: 0 auto;">
-      
-        <!-- Instagram 區塊 -->
-        <div class="container pt-3">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8 " style="max-width: 600px;">
-              <blockquote class="instagram-media"
-                          data-instgrm-permalink="https://www.instagram.com/p/DJ5pS2tz6w8/"
-                          data-instgrm-version="14"
-                          style="background:#FFF; border:0; width:100%; padding:0; margin:0 auto;">
-              </blockquote>
-            </div>
+        </section>
+
+        <section class="social-posts-section">
+          <div class="container">
+            <div id="socialPostsContainer" class="social-posts-container"></div>
           </div>
-        </div>
-      
-        <script async src="//www.instagram.com/embed.js"></script>
-      
-        <!-- IG 追蹤按鈕 -->
-        <div class="text-center mt-3">
-          <a href="https://www.instagram.com/guang_cai_intainan" target="_blank" class="btn btn-light border">
-            ➕ 追蹤我們的 Instagram
-          </a>
-        </div>
-      </section>
+        </section>
+      </main>
       
       
       
@@ -148,7 +118,437 @@
         </div>
         </div>
     </footer>
+
+    <div class="floating-contact" id="floatingContact" aria-label="快速聯絡">
+      <div class="floating-contact__menu" id="floatingContactMenu">
+        <a class="floating-contact__item" href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer" aria-label="LINE 官方帳號">
+          <span class="floating-contact__label">LINE 官方帳號</span>
+          <span class="floating-contact__icon"><i class="bi bi-line" aria-hidden="true"></i></span>
+        </a>
+        <a class="floating-contact__item" href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁">
+          <span class="floating-contact__label">Facebook 粉絲專頁</span>
+          <span class="floating-contact__icon"><i class="bi bi-facebook" aria-hidden="true"></i></span>
+        </a>
+        <a class="floating-contact__item" href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <span class="floating-contact__label">Instagram</span>
+          <span class="floating-contact__icon"><i class="bi bi-instagram" aria-hidden="true"></i></span>
+        </a>
+        <a class="floating-contact__item" href="tel:0911781115" aria-label="撥打電話">
+          <span class="floating-contact__label">撥打電話</span>
+          <span class="floating-contact__icon"><i class="bi bi-telephone-fill" aria-hidden="true"></i></span>
+        </a>
+      </div>
+      <button class="floating-contact__toggle" id="floatingContactToggle" type="button" aria-controls="floatingContactMenu" aria-expanded="false" aria-label="展開聯絡方式">
+        <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+      </button>
+    </div>
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+          const socialPosts = [
+            {
+              date: "2026/6/24",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1181315180459299&id=100057424841273",
+            },
+            {
+              date: "2026/6/9",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DZWdfu3CV_0/?igsh=NGRpbmNhdWQ5NWRi",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1516306076960206&id=100057424841273",
+            },
+            {
+              date: "2026/6/3",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DZFv6C9iTEd/?igsh=ejhiODkwaG8xbG44",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1510441340880013&id=100057424841273",
+            },
+            {
+              date: "2026/3/27",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DWYis3ACfW3/?igsh=b2Zjd2Nwdzc1MGpt",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1453759753214839&id=100057424841273",
+            },
+            {
+              date: "2026/3/12",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DVyT-P3iRiL/?igsh=MWM3MDFnMm5kcTBrbA==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1441286184462196&id=100057424841273",
+            },
+            {
+              date: "2026/3/4",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DVc6AwJCSH1/?igsh=ZDI2MWFsbjNhejN6",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1434927098431438&id=100057424841273",
+            },
+            {
+              date: "2026/2/22",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DVD5KqUDNpN/?igsh=MjI3OGEyazBjcmlo",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1426656952591786&id=100057424841273",
+            },
+            {
+              date: "2026/1/15",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DThcshmCX_5/?igsh=MWdpbzN1cnRjbXNqNQ==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1394109299179885&id=100057424841273",
+            },
+            {
+              date: "2026/1/9",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DTSGPYpCdXC/?igsh=aXQzYjhhMGN0bTY4",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1389753052948843&id=100057424841273",
+            },
+            {
+              date: "2025/11/28",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DRmGNucCcvO/?igsh=eWtqNmk5bjFqM3c1",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1358438829413599&id=100057424841273",
+            },
+            {
+              date: "2025/10/31",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DQeeFRQCZJL/?igsh=YWo2d2o2ODl3bWYz",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1335426328381516&id=100057424841273",
+            },
+            {
+              date: "2025/10/24",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Reel",
+              instagram: "https://www.instagram.com/reel/DQL8nHHCRoB/?igsh=MXBqNHVhMTY4dXQxOQ==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1329275625663253&id=100057424841273",
+            },
+            {
+              date: "2025/10/6",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DPeT5VXjysZ/?igsh=MWdiNDR0NjZwN25vbw==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1313519860572163&id=100057424841273",
+            },
+            {
+              date: "2025/9/10",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Reel",
+              instagram: "https://www.instagram.com/reel/DObR2hmiUWL/?igsh=dHdvYzg0bndkczRi",
+              facebook: "",
+            },
+            {
+              date: "2025/9/9",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Reel",
+              instagram: "https://www.instagram.com/reel/DOX4xU4DlKP/?igsh=MXB5bTdzOGNkZnV6bQ==",
+              facebook: "",
+            },
+            {
+              date: "2025/9/5",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Reel",
+              instagram: "https://www.instagram.com/reel/DOOBRALCoym/?igsh=MWg4YTg3dzQ0dGIxbA==",
+              facebook: "",
+            },
+            {
+              date: "2025/9/5 -2",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Reel",
+              instagram: "https://www.instagram.com/reel/DONYdLhDgzU/?igsh=MXJleG9pYW00cWV5cA==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1287118339878982&id=100057424841273",
+            },
+            {
+              date: "2025/9/2",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Reel",
+              instagram: "https://www.instagram.com/reel/DONYdLhDgzU/?igsh=MXJleG9pYW00cWV5cA==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1285060223418127&id=100057424841273",
+            },
+            {
+              date: "2025/8/29",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DN7Uu_Pgf4b/?igsh=MTQzbDBlMWRtYmtkZA==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1281781340412682&id=100057424841273",
+            },
+            {
+              date: "2025/4/19",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DIn8WLbzaIa/?igsh=MTRrZ3Z3Yzhva3g2Nw==",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1181315180459299&id=100057424841273",
+            },
+            {
+              date: "2025/3/3",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DGu2SOkTliG/?igsh=bjYyeW1naTluYjh3",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1144314520826032&id=100057424841273",
+            },
+            {
+              date: "2025/2/8",
+              title: "府城光彩繡莊社群紀錄",
+              description: "記錄光彩繡莊作品、活動與工藝推廣。",
+              type: "Post",
+              instagram: "https://www.instagram.com/p/DFzT_OSTa21/?igsh=cmZuODRwY3dxaThw",
+              facebook: "https://www.facebook.com/story.php?story_fbid=1127440305846787&id=100057424841273",
+            }
+          ];
+
+          function getComparableDate(dateText) {
+            const [year, month, day] = dateText.replace(/\s-.*/, '').split('/').map(Number);
+            return new Date(year, month - 1, day).getTime();
+          }
+
+          function formatDisplayDate(dateText) {
+            const suffix = dateText.match(/\s-.*/)?.[0] || '';
+            const [year, month, day] = dateText.replace(/\s-.*/, '').split('/');
+            return `${year}/${month.padStart(2, '0')}/${day.padStart(2, '0')}${suffix}`;
+          }
+
+          function createPlatformAction(url, platform, iconClass) {
+            if (!url) return '';
+
+            const modifier = platform === 'Instagram' ? ' social-detail-btn--instagram' : ' social-detail-btn--facebook';
+            return `
+              <a class="social-detail-btn${modifier}" href="${url}" target="_blank" rel="noopener noreferrer">
+                <i class="bi ${iconClass}" aria-hidden="true"></i>
+                開啟 ${platform}
+              </a>
+            `;
+          }
+
+          function escapeAttribute(value) {
+            return String(value)
+              .replaceAll('&', '&amp;')
+              .replaceAll('"', '&quot;')
+              .replaceAll('<', '&lt;')
+              .replaceAll('>', '&gt;');
+          }
+
+          function createSocialEmbed(post, platform) {
+            const isInstagram = platform === 'Instagram';
+            const url = isInstagram ? post.instagram : post.facebook;
+            const iconClass = isInstagram ? 'bi-instagram' : 'bi-facebook';
+            const platformClass = isInstagram ? 'instagram' : 'facebook';
+            const safeUrl = escapeAttribute(url);
+            const facebookPluginUrl = `https://www.facebook.com/plugins/post.php?href=${encodeURIComponent(url)}&show_text=true&width=500`;
+            const embed = isInstagram
+              ? `
+                <blockquote
+                  class="instagram-media"
+                  data-instgrm-captioned
+                  data-instgrm-permalink="${safeUrl}"
+                  data-instgrm-version="14"
+                >
+                  <a href="${safeUrl}" target="_blank" rel="noopener noreferrer">在 Instagram 查看這則貼文</a>
+                </blockquote>
+              `
+              : `
+                <iframe
+                  class="facebook-post-frame"
+                  title="Facebook 貼文預覽"
+                  src="${escapeAttribute(facebookPluginUrl)}"
+                  width="500"
+                  height="720"
+                  scrolling="no"
+                  frameborder="0"
+                  loading="lazy"
+                  allowfullscreen
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                ></iframe>
+              `;
+
+            return `
+              <article class="social-embed-card social-embed-card--${platformClass}">
+                <div class="social-embed-card__header">
+                  <span class="social-embed-card__icon">
+                    <i class="bi ${iconClass}" aria-hidden="true"></i>
+                  </span>
+                  <h3>${platform}</h3>
+                </div>
+                <div class="social-embed-card__content">
+                  ${embed}
+                </div>
+              </article>
+            `;
+          }
+
+          function processSocialEmbeds() {
+            const detail = document.getElementById('socialPostDetail');
+            if (!detail) return;
+
+            window.requestAnimationFrame(() => {
+              if (window.instgrm?.Embeds) {
+                window.instgrm.Embeds.process();
+              }
+            });
+          }
+
+          function renderSelectedPost(post, selectedIndex) {
+            const detail = document.getElementById('socialPostDetail');
+            if (!detail) return;
+
+            const previews = [
+              post.instagram ? createSocialEmbed(post, 'Instagram') : '',
+              post.facebook ? createSocialEmbed(post, 'Facebook') : ''
+            ].filter(Boolean);
+            const actions = [
+              post.instagram ? createPlatformAction(post.instagram, 'Instagram', 'bi-instagram') : '',
+              post.facebook ? createPlatformAction(post.facebook, 'Facebook', 'bi-facebook') : ''
+            ].filter(Boolean);
+
+            const previewContent = previews.length
+              ? `<div class="social-preview-grid${previews.length === 1 ? ' social-preview-grid--single' : ''}">${previews.join('')}</div>`
+              : `
+                <div class="social-preview-empty">
+                  <i class="bi bi-images" aria-hidden="true"></i>
+                  <p>目前尚無社群貼文</p>
+                </div>
+              `;
+
+            detail.innerHTML = `
+              <header class="social-detail-header">
+                <div class="social-detail-header__meta">
+                  <time datetime="${post.date.replaceAll('/', '-').replace(/\s-.*/, '')}">${formatDisplayDate(post.date)}</time>
+                  <span class="social-detail-header__type">${post.type}</span>
+                </div>
+                <h2>${post.title}</h2>
+                <p>${post.description}</p>
+              </header>
+              ${previewContent}
+              ${actions.length ? `<div class="social-detail-actions" aria-label="社群貼文連結">${actions.join('')}</div>` : ''}
+            `;
+
+            document.querySelectorAll('.social-post-list__item').forEach((item, index) => {
+              const isActive = index === selectedIndex;
+              item.classList.toggle('active', isActive);
+              item.setAttribute('aria-pressed', String(isActive));
+            });
+
+            processSocialEmbeds();
+          }
+
+          function renderSocialPosts() {
+            const container = document.getElementById('socialPostsContainer');
+            if (!container) return;
+
+            const sortedPosts = [...socialPosts].sort((a, b) => getComparableDate(b.date) - getComparableDate(a.date));
+
+            if (!sortedPosts.length) {
+              container.innerHTML = '<p class="social-posts-empty">目前尚無社群貼文。</p>';
+              return;
+            }
+
+            const postItems = sortedPosts.map((post, index) => `
+              <button
+                class="social-post-list__item${index === 0 ? ' active' : ''}"
+                type="button"
+                data-post-index="${index}"
+                aria-pressed="${index === 0}"
+                aria-controls="socialPostDetail"
+              >
+                <time class="social-post-list__date">${formatDisplayDate(post.date)}</time>
+              </button>
+            `).join('');
+
+            container.innerHTML = `
+              <div class="social-posts-layout">
+                <aside class="social-post-nav" aria-label="社群貼文日期列表">
+                  <div class="social-post-nav__heading">
+                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                    <span>貼文日期</span>
+                  </div>
+                  <div class="social-post-list">${postItems}</div>
+                </aside>
+                <section id="socialPostDetail" class="social-post-detail" aria-live="polite"></section>
+              </div>
+            `;
+
+            const postList = container.querySelector('.social-post-list');
+            postList.addEventListener('click', (event) => {
+              const selectedItem = event.target.closest('[data-post-index]');
+              if (!selectedItem) return;
+
+              const selectedIndex = Number(selectedItem.dataset.postIndex);
+              renderSelectedPost(sortedPosts[selectedIndex], selectedIndex);
+            });
+
+            renderSelectedPost(sortedPosts[0], 0);
+          }
+
+          function logout() {
+            localStorage.removeItem('memberName');
+            localStorage.removeItem('isAdmin');
+            window.location.reload();
+          }
+
+          function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const badge = document.getElementById('cart-count');
+
+            if (badge) {
+              badge.textContent = totalQty;
+              badge.style.display = totalQty > 0 ? 'inline-block' : 'none';
+            }
+          }
+
+          document.addEventListener('DOMContentLoaded', () => {
+            renderSocialPosts();
+
+            const name = localStorage.getItem('memberName');
+            const welcomeEl = document.getElementById('memberWelcome');
+            const loginLink = document.getElementById('loginLink');
+            const logoutLink = document.getElementById('logoutLink');
+
+            if (name) {
+              if (welcomeEl) {
+                welcomeEl.textContent = 'Hi, ' + name;
+                welcomeEl.classList.remove('d-none');
+                welcomeEl.classList.add('nav-link');
+              }
+              if (logoutLink) logoutLink.classList.remove('d-none');
+              if (loginLink) loginLink.classList.add('d-none');
+            } else {
+              if (welcomeEl) welcomeEl.classList.add('d-none');
+              if (logoutLink) logoutLink.classList.add('d-none');
+              if (loginLink) loginLink.classList.remove('d-none');
+            }
+
+            updateCartBadge();
+          });
+        </script>
+        <script async src="https://www.instagram.com/embed.js" onload="processSocialEmbeds()"></script>
+        <script src="main.js"></script>
     </body>
     </html>

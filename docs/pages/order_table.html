@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>訂單報表</title>
+  <link rel="stylesheet" href="../css/all.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script> <!-- ✅ 匯出用套件 -->
   <style>
     body {
@@ -50,6 +52,30 @@
         </table>
       </div>
     </div>
+  </div>
+
+  <div class="floating-contact" id="floatingContact" aria-label="快速聯絡">
+    <div class="floating-contact__menu" id="floatingContactMenu">
+      <a class="floating-contact__item" href="https://line.me/R/ti/p/@guangcai" target="_blank" rel="noopener noreferrer" aria-label="LINE 官方帳號">
+        <span class="floating-contact__label">LINE 官方帳號</span>
+        <span class="floating-contact__icon"><i class="bi bi-line" aria-hidden="true"></i></span>
+      </a>
+      <a class="floating-contact__item" href="https://www.facebook.com/share/1BCVYUShNy/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook 粉絲專頁">
+        <span class="floating-contact__label">Facebook 粉絲專頁</span>
+        <span class="floating-contact__icon"><i class="bi bi-facebook" aria-hidden="true"></i></span>
+      </a>
+      <a class="floating-contact__item" href="https://www.instagram.com/guang_cai_intainan?igsh=em5zaXoxbWRnYm8w" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <span class="floating-contact__label">Instagram</span>
+        <span class="floating-contact__icon"><i class="bi bi-instagram" aria-hidden="true"></i></span>
+      </a>
+      <a class="floating-contact__item" href="tel:0911781115" aria-label="撥打電話">
+        <span class="floating-contact__label">撥打電話</span>
+        <span class="floating-contact__icon"><i class="bi bi-telephone-fill" aria-hidden="true"></i></span>
+      </a>
+    </div>
+    <button class="floating-contact__toggle" id="floatingContactToggle" type="button" aria-controls="floatingContactMenu" aria-expanded="false" aria-label="展開聯絡方式">
+      <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+    </button>
   </div>
 
   <script>
@@ -125,5 +151,6 @@
       XLSX.writeFile(wb, `訂單報表_${new Date().toISOString().slice(0, 10)}.xlsx`);
     }
   </script>
+  <script src="main.js"></script>
 </body>
 </html>
