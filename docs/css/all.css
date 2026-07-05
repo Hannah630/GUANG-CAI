@@ -1,10 +1,19 @@
 @charset "UTF-8";
 /* 全站使用 Cactus Classical Serif 為主，中英文 fallback 配好 */
 body {
-  font-family: "Cactus Classical Serif", "Noto Sans TC", "Microsoft JhengHei", serif;
+  font-family:
+    "Cactus Classical Serif", "Noto Sans TC", "Microsoft JhengHei", serif;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, span .banner-text h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+span .banner-text h1 {
   font-family: "Cactus Classical Serif", serif;
   letter-spacing: 1px;
 }
@@ -15,7 +24,8 @@ h1, h2, h3, h4, h5, h6, p, li, span .banner-text h1 {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: "Cactus Classical Serif", serif;
 }
@@ -26,16 +36,26 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #64363C;
+  background-color: #64363c;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  transition: opacity 1s ease;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
 }
 
+/* legacy class - keep for compatibility */
 #loader.fade-out {
   opacity: 0;
+  pointer-events: none;
+}
+
+/* Preferred hide class used by loader JS */
+#loader.loader-hide {
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -294,7 +314,7 @@ html, body {
 
 .official-announcement__content h2 {
   margin-bottom: 24px;
-  color: #562E37;
+  color: #562e37;
   font-size: 2rem;
   font-weight: 700;
 }
@@ -308,7 +328,7 @@ html, body {
 
 .official-announcement__content p:last-child {
   margin-bottom: 0;
-  color: #64363C;
+  color: #64363c;
   font-weight: 700;
 }
 
@@ -396,7 +416,7 @@ html, body {
 .carousel-inner img {
   height: 300px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .product-card {
@@ -414,7 +434,7 @@ html, body {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -487,7 +507,7 @@ html, body {
 .card-pic img {
   max-height: 260px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-pic-overlay {
@@ -567,7 +587,9 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   background-color: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   height: 100%;
   width: 100%;
 }
@@ -722,7 +744,7 @@ html, body {
   width: 100%;
   height: 200px; /* 或 220px、180px 可調整 */
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media (max-width: 575.98px) {
@@ -734,12 +756,12 @@ html, body {
     width: 100%;
     height: 200px; /* ✅ 可依你需求調整為統一高度 */
     -o-object-fit: cover;
-       object-fit: cover; /* ✅ 確保圖片不變形、會裁切填滿 */
+    object-fit: cover; /* ✅ 確保圖片不變形、會裁切填滿 */
     display: block;
   }
 }
 .pagination .page-link {
-  color: #562E37; /* 主色調 */
+  color: #562e37; /* 主色調 */
   border: 1px solid #ddd;
   padding: 8px 16px;
   margin: 0 4px;
@@ -750,16 +772,16 @@ html, body {
 }
 
 .pagination .page-link:hover {
-  background-color: #562E37;
+  background-color: #562e37;
   color: white;
-  border-color: #562E37;
+  border-color: #562e37;
 }
 
 .pagination .page-link.active,
 .pagination .page-link.active:hover {
-  background-color: #562E37;
+  background-color: #562e37;
   color: white;
-  border-color: #562E37;
+  border-color: #562e37;
 }
 
 .card-img-top {
@@ -773,7 +795,7 @@ html, body {
 }
 
 .social-hero {
-  background: linear-gradient(135deg, #64363C 0%, #562E37 100%);
+  background: linear-gradient(135deg, #64363c 0%, #562e37 100%);
   color: #fff;
   padding: 72px 0 64px;
   text-align: center;
@@ -781,7 +803,7 @@ html, body {
 
 .social-hero__eyebrow {
   margin-bottom: 12px;
-  color: #E0C37A;
+  color: #e0c37a;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
@@ -832,7 +854,7 @@ html, body {
   min-height: 54px;
   padding: 0 18px;
   border-bottom: 1px solid #e8e3dc;
-  color: #562E37;
+  color: #562e37;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   font-weight: 700;
 }
@@ -856,7 +878,10 @@ html, body {
   display: flex;
   align-items: center;
   text-align: left;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .social-post-list__item + .social-post-list__item {
@@ -874,8 +899,8 @@ html, body {
 }
 
 .social-post-list__item.active {
-  border-color: #64363C;
-  background: #64363C;
+  border-color: #64363c;
+  background: #64363c;
   color: #fff;
 }
 
@@ -898,7 +923,7 @@ html, body {
   padding: 4px 8px;
   border-radius: 4px;
   background: #f1e8e9;
-  color: #562E37;
+  color: #562e37;
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -980,7 +1005,7 @@ html, body {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: #64363C;
+  background: #64363c;
   color: #fff;
   display: inline-flex;
   align-items: center;
@@ -994,7 +1019,7 @@ html, body {
 }
 
 .social-embed-card--facebook .social-embed-card__icon {
-  background: #4267B2;
+  background: #4267b2;
 }
 
 .social-embed-card__header h3 {
@@ -1105,11 +1130,14 @@ html, body {
 }
 
 .social-detail-btn {
-  border: 1px solid #64363C;
-  background: #64363C;
+  border: 1px solid #64363c;
+  background: #64363c;
   color: #fff;
   text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .social-detail-btn:hover,
@@ -1130,8 +1158,8 @@ html, body {
 }
 
 .social-detail-btn--facebook {
-  border-color: #4267B2;
-  background: #4267B2;
+  border-color: #4267b2;
+  background: #4267b2;
 }
 
 .social-detail-btn--facebook:hover,
@@ -1257,7 +1285,9 @@ html, body {
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .floating-contact.is-open .floating-contact__menu {
@@ -1278,19 +1308,22 @@ html, body {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #D7B46A 0%, #B9863F 100%);
+  background: linear-gradient(135deg, #d7b46a 0%, #b9863f 100%);
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.45rem;
   box-shadow: 0 10px 24px rgba(91, 62, 25, 0.26);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .floating-contact__toggle:hover,
 .floating-contact__toggle:focus-visible {
-  background: linear-gradient(135deg, #E0C37A 0%, #C79549 100%);
+  background: linear-gradient(135deg, #e0c37a 0%, #c79549 100%);
   box-shadow: 0 12px 28px rgba(91, 62, 25, 0.32);
   transform: translateY(-2px);
 }
@@ -1306,7 +1339,7 @@ html, body {
   padding: 6px 7px 6px 14px;
   border-radius: 999px;
   background-color: rgba(255, 251, 241, 0.98);
-  color: #562E37;
+  color: #562e37;
   display: inline-flex;
   align-items: center;
   justify-content: flex-end;
@@ -1315,12 +1348,15 @@ html, body {
   line-height: 1;
   white-space: nowrap;
   box-shadow: 0 8px 20px rgba(40, 24, 28, 0.16);
-  transition: color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .floating-contact__item:hover,
 .floating-contact__item:focus-visible {
-  color: #64363C;
+  color: #64363c;
   transform: translateX(-2px);
   box-shadow: 0 10px 24px rgba(40, 24, 28, 0.2);
 }
@@ -1329,7 +1365,7 @@ html, body {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #D7B46A 0%, #B9863F 100%);
+  background: linear-gradient(135deg, #d7b46a 0%, #b9863f 100%);
   color: #fff;
   display: inline-flex;
   align-items: center;
